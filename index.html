@@ -945,5 +945,338 @@
         console.log('💻 تم التطوير باستخدام HTML + CSS + JavaScript');
         console.log('📧 للتواصل: youssef@example.com');
     </script>
+    <!-- ====== رابط البحث في الهيدر ====== -->
+<style>
+    /* زر البحث في الهيدر */
+    .search-link {
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1rem;
+        padding: 5px 10px;
+        border-radius: 8px;
+    }
+    
+    .search-link:hover {
+        color: #6C63FF;
+        background: rgba(255,255,255,0.1);
+    }
+    
+    /* نافذة البحث المنبثقة */
+    .search-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(8px);
+        z-index: 99999;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    .search-modal.active {
+        display: flex;
+    }
+    
+    .search-modal-content {
+        background: white;
+        padding: 40px;
+        border-radius: 24px;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        animation: slideUp 0.4s ease;
+    }
+    
+    .search-modal-content h2 {
+        color: #1E1E2F;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    
+    .search-modal-content h2 i {
+        color: #6C63FF;
+        margin-left: 10px;
+    }
+    
+    .search-input-wrapper {
+        display: flex;
+        align-items: center;
+        background: #F8F9FE;
+        border: 2px solid #E0E0F0;
+        border-radius: 50px;
+        padding: 5px 20px;
+        transition: 0.3s;
+    }
+    
+    .search-input-wrapper:focus-within {
+        border-color: #6C63FF;
+        box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.15);
+    }
+    
+    .search-input-wrapper i {
+        color: #6C63FF;
+        font-size: 1.2rem;
+        margin-left: 12px;
+    }
+    
+    .search-input-wrapper input {
+        border: none;
+        outline: none;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        width: 100%;
+        background: transparent;
+        font-family: inherit;
+    }
+    
+    .search-modal-results {
+        margin-top: 20px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    
+    .search-modal-result {
+        padding: 12px 15px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .search-modal-result:hover {
+        background: #F8F9FE;
+        transform: translateX(-5px);
+    }
+    
+    .search-modal-result i {
+        color: #6C63FF;
+        width: 20px;
+    }
+    
+    .search-modal-result .result-text {
+        flex: 1;
+    }
+    
+    .search-modal-result .result-section {
+        font-size: 0.8rem;
+        color: #999;
+    }
+    
+    .search-modal-result .highlight {
+        background: #FFD700;
+        padding: 0 4px;
+        border-radius: 3px;
+    }
+    
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+        background: none;
+        border: none;
+    }
+    
+    .close-modal:hover {
+        transform: rotate(90deg);
+        color: #6C63FF;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .no-results-modal {
+        text-align: center;
+        padding: 30px;
+        color: #999;
+    }
+    
+    .no-results-modal i {
+        font-size: 3rem;
+        color: #6C63FF;
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- ====== إضافة رابط البحث في الهيدر ====== -->
+<!-- ضع هذا السطر داخل قائمة التنقل (ul.nav-links) -->
+<li><a class="search-link" id="openSearchModal"><i class="fas fa-search"></i> بحث</a></li>
+
+<!-- ====== نافذة البحث المنبثقة ====== -->
+<div class="search-modal" id="searchModal">
+    <button class="close-modal" id="closeModal">&times;</button>
+    <div class="search-modal-content">
+        <h2><i class="fas fa-search"></i> بحث في الموقع</h2>
+        <div class="search-input-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="modalSearchInput" placeholder="اكتب ما تبحث عنه..." />
+        </div>
+        <div class="search-modal-results" id="modalResults"></div>
+    </div>
+</div>
+
+<script>
+// ============================================================
+// محرك البحث المنبثق - يوسف حسين سقيل
+// ============================================================
+
+// عناصر النافذة
+const searchModal = document.getElementById('searchModal');
+const openSearchBtn = document.getElementById('openSearchModal');
+const closeModalBtn = document.getElementById('closeModal');
+const modalInput = document.getElementById('modalSearchInput');
+const modalResults = document.getElementById('modalResults');
+
+// فتح النافذة
+openSearchBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    searchModal.classList.add('active');
+    setTimeout(() => modalInput.focus(), 300);
+});
+
+// إغلاق النافذة
+function closeModal() {
+    searchModal.classList.remove('active');
+    modalInput.value = '';
+    modalResults.innerHTML = '';
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+
+// إغلاق عند النقر خارج المحتوى
+searchModal.addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+});
+
+// إغلاق عند الضغط على ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+});
+
+// ====== وظيفة البحث ======
+function getSearchableData() {
+    const items = [];
+    
+    document.querySelectorAll('h1, h2, h3, p, .stat-label, .project-tag, .about-info div, .skill-card h3, .project-card h3, .project-card p, .hero-content p, .typing-text').forEach(el => {
+        const text = el.textContent.trim();
+        if (text.length > 2) {
+            let section = 'محتوى';
+            let icon = 'fa-file-text';
+            let link = '#';
+            let parent = el.closest('section');
+            if (parent) {
+                const id = parent.id;
+                if (id === 'home') { section = 'الرئيسية'; icon = 'fa-home'; link = '#home'; }
+                else if (id === 'about') { section = 'عنّي'; icon = 'fa-user'; link = '#about'; }
+                else if (id === 'skills') { section = 'المهارات'; icon = 'fa-code'; link = '#skills'; }
+                else if (id === 'projects') { section = 'الأعمال'; icon = 'fa-briefcase'; link = '#projects'; }
+                else if (id === 'contact') { section = 'التواصل'; icon = 'fa-envelope'; link = '#contact'; }
+            }
+            items.push({ text, section, icon, link });
+        }
+    });
+    
+    return items;
+}
+
+function searchContent(query) {
+    if (!query || query.length < 1) return [];
+    const allItems = getSearchableData();
+    const results = [];
+    const searchLower = query.toLowerCase();
+    
+    allItems.forEach(item => {
+        const textLower = item.text.toLowerCase();
+        if (textLower.includes(searchLower)) {
+            const index = textLower.indexOf(searchLower);
+            const before = item.text.substring(0, index);
+            const match = item.text.substring(index, index + query.length);
+            const after = item.text.substring(index + query.length);
+            results.push({
+                ...item,
+                displayText: before + '<span class="highlight">' + match + '</span>' + after
+            });
+        }
+    });
+    
+    return results;
+}
+
+// عرض النتائج في النافذة
+modalInput.addEventListener('input', function() {
+    const query = this.value.trim();
+    const results = searchContent(query);
+    
+    if (results.length === 0 && query.length > 0) {
+        modalResults.innerHTML = `
+            <div class="no-results-modal">
+                <i class="fas fa-search"></i>
+                لا توجد نتائج مطابقة
+            </div>
+        `;
+        return;
+    }
+    
+    if (query.length === 0) {
+        modalResults.innerHTML = '';
+        return;
+    }
+    
+    let html = '';
+    results.forEach(result => {
+        html += `
+            <div class="search-modal-result" onclick="window.location.href='${result.link}'; closeModal();">
+                <i class="fas ${result.icon}"></i>
+                <div class="result-text">
+                    <div>${result.displayText}</div>
+                    <span class="result-section">${result.section}</span>
+                </div>
+            </div>
+        `;
+    });
+    
+    modalResults.innerHTML = html;
+});
+
+// البحث عند الضغط على Enter
+modalInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        const query = this.value.trim();
+        if (query.length > 0) {
+            const results = searchContent(query);
+            if (results.length > 0) {
+                window.location.href = results[0].link;
+                closeModal();
+            }
+        }
+    }
+});
+
+console.log('🔍 محرك البحث المنبثق جاهز!');
+console.log('💡 اضغط على زر "بحث" في الهيدر لفتح نافذة البحث.');
+</script>
 </body>
 </html>
