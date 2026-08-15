@@ -1,1283 +1,560 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>يوسف حسين سقيل - الموقع الشخصي</title>
-    <meta name="description" content="الموقع الرسمي ليوسف سقيل">
-<meta name="robots" content="index, follow"> 
-    <!-- Font Awesome للأيقونات -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
-    <style>
-        /* ============================================================
-           جميع التنسيقات (CSS) مدمجة هنا
-           ============================================================ */
-        
-        /* ====== إعدادات عامة ====== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --primary: #6C63FF;
-            --primary-dark: #5A52D5;
-            --secondary: #2D2D3F;
-            --light-bg: #F8F9FE;
-            --dark-text: #1E1E2F;
-            --gray-text: #6B6B80;
-            --white: #FFFFFF;
-            --shadow: 0 8px 30px rgba(108, 99, 255, 0.15);
-            --radius: 16px;
-            --transition: 0.3s ease;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-            color: var(--dark-text);
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            border-radius: 50%;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        /* ====== شريط التنقل ====== */
-        .navbar {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 18px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            transition: var(--transition);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            font-size: 1.05rem;
-            transition: var(--transition);
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* ====== قسم الرئيسية ====== */
-        .hero {
-            padding: 140px 0 80px;
-            background: linear-gradient(135deg, #1E1E2F 0%, #2D2D3F 100%);
-            color: var(--white);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-        }
-
-        .hero-content h1 span {
-            color: var(--primary);
-        }
-
-        .typing-text {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin: 15px 0;
-            min-height: 50px;
-            font-weight: 600;
-        }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            color: #C8C8D8;
-            max-width: 500px;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .hero-image img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border: 6px solid var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        /* ====== قسم عنّي ====== */
-        .about {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            color: var(--gray-text);
-        }
-
-        .about-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .about-info div {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            color: var(--dark-text);
-        }
-
-        .about-info i {
-            color: var(--primary);
-            width: 22px;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat {
-            background: var(--light-bg);
-            padding: 30px 20px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 1.05rem;
-            color: var(--gray-text);
-        }
-
-        /* ====== قسم المهارات ====== */
-        .skills {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-card {
-            background: var(--white);
-            padding: 30px 20px;
-            border-radius: var(--radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .skill-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #E8E8F0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .progress-bar span {
-            display: block;
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            border-radius: 10px;
-            transition: width 1s ease;
-        }
-
-        /* ====== قسم الأعمال ====== */
-        .projects {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: var(--light-bg);
-            padding: 30px 25px;
-            border-radius: var(--radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-bottom: 4px solid transparent;
-        }
-
-        .project-card:hover {
-            border-bottom-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .project-icon {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            color: var(--gray-text);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* ====== قسم التواصل ====== */
-        .contact {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 16px 20px;
-            border: 2px solid #E0E0F0;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: var(--transition);
-            background: var(--white);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.15);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-        }
-
-        .contact-form button {
-            align-self: flex-start;
-        }
-
-        .form-message {
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .form-message.success {
-            color: #22C55E;
-        }
-
-        .form-message.error {
-            color: #EF4444;
-        }
-
-        .contact-social h3 {
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 20px;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateX(5px);
-        }
-
-        .social-links a i {
-            font-size: 1.4rem;
-        }
-
-        /* ====== التذييل ====== */
-        .footer {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 30px 0;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        /* ====== استجابة للشاشات الصغيرة ====== */
-        @media (max-width: 992px) {
-            .hero .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-content p {
-                margin: 0 auto 30px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-info {
-                justify-items: center;
-            }
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: var(--secondary);
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                padding: 20px 0;
-                text-align: center;
-                gap: 15px;
-                border-top: 2px solid var(--primary);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-image img {
-                width: 200px;
-                height: 200px;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .about-info {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .btn {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+
+  <!-- توافق جميع الأجهزة -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- معلومات محركات البحث -->
+  <title>يوسف سقيل | موقعي الإلكتروني الرسمي</title>
+
+  <meta name="description"
+        content="الموقع الإلكتروني الرسمي ليوسف سقيل. تعرف على يوسف سقيل ومعلومات الموقع وأحدث المحتويات.">
+
+  <meta name="keywords"
+        content="يوسف سقيل, يوسف, سقيل, موقع يوسف سقيل, yusif hassan">
+
+  <meta name="author" content="يوسف سقيل">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- الرابط الأساسي للموقع -->
+  <link rel="canonical"
+        href="https://yusifhassan2027-lang.github.io/my-first-website/">
+
+  <!-- Open Graph عند مشاركة الموقع -->
+  <meta property="og:title" content="يوسف سقيل | موقعي الإلكتروني الرسمي">
+  <meta property="og:description"
+        content="الموقع الإلكتروني الرسمي ليوسف سقيل.">
+  <meta property="og:type" content="website">
+  <meta property="og:url"
+        content="https://yusifhassan2027-lang.github.io/my-first-website/">
+
+  <!-- لون المتصفح على الهاتف -->
+  <meta name="theme-color" content="#111827">
+
+  <!-- =========================
+       CSS - التصميم
+  ========================== -->
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.8;
+      transition: 0.4s;
+    }
+
+    /* الهيدر */
+    header {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #d1d5db;
+      font-size: 17px;
+    }
+
+    /* القائمة */
+    nav {
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* المحتوى */
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 15px;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 25px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    section h2 {
+      color: #1d4ed8;
+      margin-bottom: 15px;
+      font-size: 27px;
+    }
+
+    section p {
+      font-size: 18px;
+    }
+
+    /* الأزرار */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    button {
+      border: none;
+      padding: 13px 22px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: #2563eb;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .black {
+      background: #000;
+    }
+
+    .cyan {
+      background: #06b6d4;
+    }
+
+    .yellow {
+      background: #eab308;
+      color: #111;
+    }
+
+    .wave {
+      background: linear-gradient(
+        120deg,
+        #06b6d4,
+        #2563eb,
+        #9333ea,
+        #ec4899
+      );
+      background-size: 300% 300%;
+      animation: wave 5s ease infinite;
+    }
+
+    @keyframes wave {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* بطاقة الترحيب */
+    .hero {
+      text-align: center;
+      padding: 55px 25px;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    }
+
+    .hero h2 {
+      font-size: 35px;
+      color: #1e3a8a;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 15px auto;
+    }
+
+    /* نموذج التواصل */
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    /* الفوتر */
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    /* زر العودة للأعلى */
+    #topButton {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #2563eb;
+      display: none;
+      z-index: 2000;
+      padding: 0;
+    }
+
+    /* الجوال */
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .hero h2 {
+        font-size: 27px;
+      }
+
+      section p {
+        font-size: 16px;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
-    <!-- ====== شريط التنقل ====== -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="logo">يوسف <span>سقيل</span></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">عنّي</a></li>
-                <li><a href="#skills">المهارات</a></li>
-                <li><a href="#projects">الأعمال</a></li>
-                <li><a href="#contact">تواصل</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+  <!-- =========================
+       رأس الموقع
+  ========================== -->
+  <header>
 
-    <!-- ====== قسم الرئيسية ====== -->
+    <h1>يوسف سقيل</h1>
+
+    <p>
+      مرحبًا بكم في موقعي الإلكتروني الرسمي
+    </p>
+
+  </header>
+
+
+  <!-- =========================
+       القائمة الرئيسية
+  ========================== -->
+  <nav>
+
+    <a href="#home">🏠 الرئيسية</a>
+
+    <a href="#about">👤 من أنا</a>
+
+    <a href="#contact">📞 اتصل بنا</a>
+
+  </nav>
+
+
+  <!-- =========================
+       المحتوى الرئيسي
+  ========================== -->
+  <main>
+
+    <!-- الرئيسية -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>مرحبًا، أنا <span>يوسف حسين سقيل</span></h1>
-                <p class="typing-text" id="typingText">مطور ويب</p>
-                <p>أصمم وأبني تجارب رقمية مميزة تجمع بين الإبداع والتقنية.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">أعمالي</a>
-                    <a href="#contact" class="btn btn-secondary">تواصل معي</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- ضع صورتك هنا في مجلد images باسم profile.jpg -->
-                <img src="images/profile.jpg" alt="يوسف حسين سقيل" />
-            </div>
-        </div>
+
+      <h2>
+        مرحبًا بكم في موقع يوسف سقيل
+      </h2>
+
+      <p>
+        هذا هو الموقع الإلكتروني الرسمي ليوسف سقيل،
+        ويمكنك من خلاله التعرف على الموقع ومحتواه.
+      </p>
+
+      <div class="buttons">
+
+        <button onclick="changeColor('black')" class="black">
+          ⚫ أسود
+        </button>
+
+        <button onclick="changeColor('cyan')" class="cyan">
+          🔵 سماوي
+        </button>
+
+        <button onclick="changeColor('yellow')" class="yellow">
+          🟡 أصفر
+        </button>
+
+        <button onclick="changeColor('wave')" class="wave">
+          🌈 ألوان متحركة
+        </button>
+
+      </div>
+
     </section>
 
-    <!-- ====== قسم عنّي ====== -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">عنّي</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        أنا <strong>يوسف حسين سقيل</strong>، مطور ويب شغوف ببناء تطبيقات رقمية 
-                        مبتكرة. أمتلك خبرة في تطوير واجهات المستخدم وتجربة المستخدم، 
-                        وأؤمن بأن التكنولوجيا يجب أن تكون في خدمة الإنسان لتسهيل حياته.
-                    </p>
-                    <p>
-                        أبحث دائمًا عن تحديات جديدة وأسعى لتطوير مهاراتي باستمرار 
-                        في مجالات البرمجة والتصميم.
-                    </p>
-                    <div class="about-info">
-                        <div><i class="fas fa-user"></i> يوسف حسين سقيل</div>
-                        <div><i class="fas fa-map-marker-alt"></i> السعودية</div>
-                        <div><i class="fas fa-envelope"></i> youssef@example.com</div>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-target="5">0</span>
-                        <span class="stat-label">مشاريع منجزة</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="3">0</span>
-                        <span class="stat-label">سنوات خبرة</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="12">0</span>
-                        <span class="stat-label">عميل سعيد</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <!-- من أنا -->
+    <section id="about">
+
+      <h2>👤 من أنا</h2>
+
+      <p>
+        أنا يوسف سقيل، وهذا موقعي الإلكتروني الشخصي.
+        تم إنشاء هذا الموقع باستخدام تقنيات HTML وCSS وJavaScript.
+      </p>
+
     </section>
 
-    <!-- ====== قسم المهارات ====== -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">مهاراتي</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                    <div class="progress-bar"><span style="width: 95%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                    <div class="progress-bar"><span style="width: 90%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                    <div class="progress-bar"><span style="width: 85%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                    <div class="progress-bar"><span style="width: 75%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <div class="progress-bar"><span style="width: 70%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>SQL</h3>
-                    <div class="progress-bar"><span style="width: 80%;"></span></div>
-                </div>
-            </div>
-        </div>
+
+    <!-- التواصل -->
+    <section id="contact">
+
+      <h2>📞 اتصل بنا</h2>
+
+      <p>
+        يمكنك استخدام النموذج التالي للتواصل.
+      </p>
+
+      <form onsubmit="sendMessage(event)">
+
+        <label for="name">
+          الاسم
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="اكتب اسمك"
+          required
+        >
+
+        <label for="email">
+          البريد الإلكتروني
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="example@email.com"
+          required
+        >
+
+        <label for="message">
+          الرسالة
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="اكتب رسالتك هنا..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          إرسال الرسالة
+        </button>
+
+      </form>
+
     </section>
 
-    <!-- ====== قسم الأعمال ====== -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">أعمالي</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-store"></i></div>
-                    <h3>متجر إلكتروني</h3>
-                    <p>منصة تسوق كاملة بواجهة عصرية وتجربة مستخدم ممتازة.</p>
-                    <span class="project-tag">HTML • CSS • JS</span>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>لوحة تحكم</h3>
-                    <p>لوحة تحكم تفاعلية لعرض البيانات والإحصائيات بشكل مرئي.</p>
-                    <span class="project-tag">React • Chart.js</span>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>تطبيق جوال</h3>
-                    <p>تطبيق متجاوب يعمل على جميع الأجهزة بشاشات مختلفة.</p>
-                    <span class="project-tag">PWA • CSS3</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  </main>
 
-    <!-- ====== قسم التواصل ====== -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">تواصل معي</h2>
-            <div class="contact-wrapper">
-                <form id="contactForm" class="contact-form">
-                    <input type="text" id="name" placeholder="الاسم الكامل" required />
-                    <input type="email" id="email" placeholder="البريد الإلكتروني" required />
-                    <textarea id="message" placeholder="رسالتك..." rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
-                    <div id="formMessage" class="form-message"></div>
-                </form>
-                <div class="contact-social">
-                    <h3>وسائل التواصل</h3>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ====== تذييل الصفحة ====== -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 يوسف حسين سقيل. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+  <!-- العودة للأعلى -->
+  <button id="topButton" onclick="goTop()">
+    ↑
+  </button>
 
-    <!-- ============================================================
-         جميع أكواد الجافاسكريبت (JavaScript) مدمجة هنا
-         ============================================================ -->
-    <script>
-        // ============================================================
-        // 1. قائمة التنقل في الجوال
-        // ============================================================
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
 
-        if (menuToggle) {
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-        }
+  <!-- =========================
+       الفوتر
+  ========================== -->
+  <footer>
 
-        // إغلاق القائمة عند النقر على أي رابط
-        document.querySelectorAll('.nav-links a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-            });
-        });
+    <p>
+      © 2026 يوسف سقيل
+    </p>
 
-        // ============================================================
-        // 2. تأثير الكتابة الآلية (Typing Effect)
-        // ============================================================
-        var typingElement = document.getElementById('typingText');
-        if (typingElement) {
-            var texts = ['مطور ويب', 'مصمم واجهات', 'مبدع رقمي', 'يوسف حسين سقيل'];
-            var textIndex = 0;
-            var charIndex = 0;
-            var isDeleting = false;
-            var currentText = '';
+    <p>
+      جميع الحقوق محفوظة.
+    </p>
 
-            function typeEffect() {
-                var fullText = texts[textIndex];
-                
-                if (isDeleting) {
-                    currentText = fullText.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    currentText = fullText.substring(0, charIndex + 1);
-                    charIndex++;
-                }
+  </footer>
 
-                typingElement.textContent = currentText;
 
-                var speed = isDeleting ? 50 : 120;
+  <!-- =========================
+       JavaScript
+  ========================== -->
+  <script>
 
-                if (!isDeleting && charIndex === fullText.length) {
-                    speed = 2000; // توقف قبل المسح
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    speed = 500;
-                }
+    /* تغيير لون الصفحة */
 
-                setTimeout(typeEffect, speed);
-            }
+    function changeColor(color) {
 
-            typeEffect();
-        }
+      if (color === "black") {
 
-        // ============================================================
-        // 3. عدادات الأرقام المتحركة
-        // ============================================================
-        var statNumbers = document.querySelectorAll('.stat-number');
+        document.body.style.background =
+          "#000000";
 
-        function animateNumbers() {
-            statNumbers.forEach(function(stat) {
-                var target = parseInt(stat.getAttribute('data-target'));
-                var current = parseInt(stat.textContent);
-                var increment = Math.ceil(target / 60);
-                
-                if (current < target) {
-                    var newValue = Math.min(current + increment, target);
-                    stat.textContent = newValue;
-                }
-            });
-        }
+        document.body.style.color =
+          "#ffffff";
 
-        // تشغيل العدادات عند التمرير إلى القسم
-        var aboutSection = document.querySelector('.about');
-        var isAnimated = false;
+      }
 
-        if (aboutSection) {
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting && !isAnimated) {
-                        isAnimated = true;
-                        statNumbers.forEach(function(stat) {
-                            stat.textContent = '0';
-                        });
-                        var interval = setInterval(function() {
-                            var allDone = true;
-                            statNumbers.forEach(function(stat) {
-                                var target = parseInt(stat.getAttribute('data-target'));
-                                var current = parseInt(stat.textContent);
-                                if (current < target) allDone = false;
-                            });
-                            if (allDone) clearInterval(interval);
-                            animateNumbers();
-                        }, 30);
-                    }
-                });
-            }, { threshold: 0.3 });
-            
-            observer.observe(aboutSection);
-        }
+      else if (color === "cyan") {
 
-        // ============================================================
-        // 4. معالجة نموذج التواصل
-        // ============================================================
-        var contactForm = document.getElementById('contactForm');
-        var formMessage = document.getElementById('formMessage');
+        document.body.style.background =
+          "#06b6d4";
 
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                var name = document.getElementById('name').value.trim();
-                var email = document.getElementById('email').value.trim();
-                var message = document.getElementById('message').value.trim();
+        document.body.style.color =
+          "#ffffff";
 
-                // تحقق بسيط
-                if (!name || !email || !message) {
-                    formMessage.textContent = '❌ الرجاء ملء جميع الحقول';
-                    formMessage.className = 'form-message error';
-                    return;
-                }
+      }
 
-                if (!email.includes('@') || !email.includes('.')) {
-                    formMessage.textContent = '❌ الرجاء إدخال بريد إلكتروني صحيح';
-                    formMessage.className = 'form-message error';
-                    return;
-                }
+      else if (color === "yellow") {
 
-                // محاكاة إرسال (يمكن استبدالها بإرسال حقيقي)
-                formMessage.textContent = '✅ تم إرسال رسالتك بنجاح! سأتواصل معك قريبًا.';
-                formMessage.className = 'form-message success';
-                
-                contactForm.reset();
+        document.body.style.background =
+          "#facc15";
 
-                // تنظيف الرسالة بعد 5 ثواني
-                setTimeout(function() {
-                    formMessage.textContent = '';
-                    formMessage.className = 'form-message';
-                }, 5000);
-            });
-        }
+        document.body.style.color =
+          "#111111";
 
-        // ============================================================
-        // 5. تأثير ظهور العناصر عند التمرير (Scroll Animation)
-        // ============================================================
-        var animatedElements = document.querySelectorAll('.skill-card, .project-card, .stat');
-        
-        var scrollObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        animatedElements.forEach(function(el) {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            scrollObserver.observe(el);
-        });
+      }
 
-        // ============================================================
-        // 6. تغيير شريط التنقل عند التمرير
-        // ============================================================
-        var navbar = document.getElementById('navbar');
+      else if (color === "wave") {
 
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                navbar.style.background = '#1A1A2E';
-                navbar.style.boxShadow = '0 8px 30px rgba(0,0,0,0.4)';
-            } else {
-                navbar.style.background = '#2D2D3F';
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-            }
-        });
+        document.body.style.background =
+          "linear-gradient(120deg,#06b6d4,#2563eb,#9333ea,#ec4899)";
 
-        // ============================================================
-        // 7. رسالة ترحيبية في الكونسول
-        // ============================================================
-        console.log('🚀 مرحبًا بك في موقع يوسف حسين سقيل!');
-        console.log('💻 تم التطوير باستخدام HTML + CSS + JavaScript');
-        console.log('📧 للتواصل: youssef@example.com');
-    </script>
-    <!-- ====== رابط البحث في الهيدر ====== -->
-<style>
-    /* زر البحث في الهيدر */
-    .search-link {
-        color: white;
-        cursor: pointer;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 1rem;
-        padding: 5px 10px;
-        border-radius: 8px;
+        document.body.style.backgroundSize =
+          "300% 300%";
+
+        document.body.style.color =
+          "#ffffff";
+
+        document.body.style.animation =
+          "wave 5s ease infinite";
+
+      }
+
     }
-    
-    .search-link:hover {
-        color: #6C63FF;
-        background: rgba(255,255,255,0.1);
-    }
-    
-    /* نافذة البحث المنبثقة */
-    .search-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.7);
-        backdrop-filter: blur(8px);
-        z-index: 99999;
-        justify-content: center;
-        align-items: center;
-        animation: fadeIn 0.3s ease;
-    }
-    
-    .search-modal.active {
-        display: flex;
-    }
-    
-    .search-modal-content {
-        background: white;
-        padding: 40px;
-        border-radius: 24px;
-        max-width: 600px;
-        width: 90%;
-        box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-        animation: slideUp 0.4s ease;
-    }
-    
-    .search-modal-content h2 {
-        color: #1E1E2F;
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 1.8rem;
-    }
-    
-    .search-modal-content h2 i {
-        color: #6C63FF;
-        margin-left: 10px;
-    }
-    
-    .search-input-wrapper {
-        display: flex;
-        align-items: center;
-        background: #F8F9FE;
-        border: 2px solid #E0E0F0;
-        border-radius: 50px;
-        padding: 5px 20px;
-        transition: 0.3s;
-    }
-    
-    .search-input-wrapper:focus-within {
-        border-color: #6C63FF;
-        box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.15);
-    }
-    
-    .search-input-wrapper i {
-        color: #6C63FF;
-        font-size: 1.2rem;
-        margin-left: 12px;
-    }
-    
-    .search-input-wrapper input {
-        border: none;
-        outline: none;
-        padding: 15px 0;
-        font-size: 1.1rem;
-        width: 100%;
-        background: transparent;
-        font-family: inherit;
-    }
-    
-    .search-modal-results {
-        margin-top: 20px;
-        max-height: 300px;
-        overflow-y: auto;
-    }
-    
-    .search-modal-result {
-        padding: 12px 15px;
-        cursor: pointer;
-        transition: 0.3s;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    .search-modal-result:hover {
-        background: #F8F9FE;
-        transform: translateX(-5px);
-    }
-    
-    .search-modal-result i {
-        color: #6C63FF;
-        width: 20px;
-    }
-    
-    .search-modal-result .result-text {
-        flex: 1;
-    }
-    
-    .search-modal-result .result-section {
-        font-size: 0.8rem;
-        color: #999;
-    }
-    
-    .search-modal-result .highlight {
-        background: #FFD700;
-        padding: 0 4px;
-        border-radius: 3px;
-    }
-    
-    .close-modal {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: white;
-        font-size: 2.5rem;
-        cursor: pointer;
-        transition: 0.3s;
-        background: none;
-        border: none;
-    }
-    
-    .close-modal:hover {
-        transform: rotate(90deg);
-        color: #6C63FF;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    
-    .no-results-modal {
-        text-align: center;
-        padding: 30px;
-        color: #999;
-    }
-    
-    .no-results-modal i {
-        font-size: 3rem;
-        color: #6C63FF;
-        display: block;
-        margin-bottom: 10px;
-    }
-</style>
 
-<!-- ====== إضافة رابط البحث في الهيدر ====== -->
-<!-- ضع هذا السطر داخل قائمة التنقل (ul.nav-links) -->
-<li><a class="search-link" id="openSearchModal"><i class="fas fa-search"></i> بحث</a></li>
 
-<!-- ====== نافذة البحث المنبثقة ====== -->
-<div class="search-modal" id="searchModal">
-    <button class="close-modal" id="closeModal">&times;</button>
-    <div class="search-modal-content">
-        <h2><i class="fas fa-search"></i> بحث في الموقع</h2>
-        <div class="search-input-wrapper">
-            <i class="fas fa-search"></i>
-            <input type="text" id="modalSearchInput" placeholder="اكتب ما تبحث عنه..." />
-        </div>
-        <div class="search-modal-results" id="modalResults"></div>
-    </div>
-</div>
+    /* نموذج التواصل */
 
-<script>
-// ============================================================
-// محرك البحث المنبثق - يوسف حسين سقيل
-// ============================================================
+    function sendMessage(event) {
 
-// عناصر النافذة
-const searchModal = document.getElementById('searchModal');
-const openSearchBtn = document.getElementById('openSearchModal');
-const closeModalBtn = document.getElementById('closeModal');
-const modalInput = document.getElementById('modalSearchInput');
-const modalResults = document.getElementById('modalResults');
+      event.preventDefault();
 
-// فتح النافذة
-openSearchBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    searchModal.classList.add('active');
-    setTimeout(() => modalInput.focus(), 300);
-});
+      const name =
+        document.getElementById("name").value;
 
-// إغلاق النافذة
-function closeModal() {
-    searchModal.classList.remove('active');
-    modalInput.value = '';
-    modalResults.innerHTML = '';
-}
+      alert(
+        "شكرًا لك يا " +
+        name +
+        "، تم استلام رسالتك."
+      );
 
-closeModalBtn.addEventListener('click', closeModal);
+    }
 
-// إغلاق عند النقر خارج المحتوى
-searchModal.addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-});
 
-// إغلاق عند الضغط على ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-});
+    /* إظهار زر العودة للأعلى */
 
-// ====== وظيفة البحث ======
-function getSearchableData() {
-    const items = [];
-    
-    document.querySelectorAll('h1, h2, h3, p, .stat-label, .project-tag, .about-info div, .skill-card h3, .project-card h3, .project-card p, .hero-content p, .typing-text').forEach(el => {
-        const text = el.textContent.trim();
-        if (text.length > 2) {
-            let section = 'محتوى';
-            let icon = 'fa-file-text';
-            let link = '#';
-            let parent = el.closest('section');
-            if (parent) {
-                const id = parent.id;
-                if (id === 'home') { section = 'الرئيسية'; icon = 'fa-home'; link = '#home'; }
-                else if (id === 'about') { section = 'عنّي'; icon = 'fa-user'; link = '#about'; }
-                else if (id === 'skills') { section = 'المهارات'; icon = 'fa-code'; link = '#skills'; }
-                else if (id === 'projects') { section = 'الأعمال'; icon = 'fa-briefcase'; link = '#projects'; }
-                else if (id === 'contact') { section = 'التواصل'; icon = 'fa-envelope'; link = '#contact'; }
-            }
-            items.push({ text, section, icon, link });
-        }
+    window.addEventListener("scroll", function () {
+
+      const button =
+        document.getElementById("topButton");
+
+      if (window.scrollY > 300) {
+
+        button.style.display = "block";
+
+      } else {
+
+        button.style.display = "none";
+
+      }
+
     });
-    
-    return items;
-}
 
-function searchContent(query) {
-    if (!query || query.length < 1) return [];
-    const allItems = getSearchableData();
-    const results = [];
-    const searchLower = query.toLowerCase();
-    
-    allItems.forEach(item => {
-        const textLower = item.text.toLowerCase();
-        if (textLower.includes(searchLower)) {
-            const index = textLower.indexOf(searchLower);
-            const before = item.text.substring(0, index);
-            const match = item.text.substring(index, index + query.length);
-            const after = item.text.substring(index + query.length);
-            results.push({
-                ...item,
-                displayText: before + '<span class="highlight">' + match + '</span>' + after
-            });
-        }
-    });
-    
-    return results;
-}
 
-// عرض النتائج في النافذة
-modalInput.addEventListener('input', function() {
-    const query = this.value.trim();
-    const results = searchContent(query);
-    
-    if (results.length === 0 && query.length > 0) {
-        modalResults.innerHTML = `
-            <div class="no-results-modal">
-                <i class="fas fa-search"></i>
-                لا توجد نتائج مطابقة
-            </div>
-        `;
-        return;
+    /* العودة للأعلى */
+
+    function goTop() {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
     }
-    
-    if (query.length === 0) {
-        modalResults.innerHTML = '';
-        return;
-    }
-    
-    let html = '';
-    results.forEach(result => {
-        html += `
-            <div class="search-modal-result" onclick="window.location.href='${result.link}'; closeModal();">
-                <i class="fas ${result.icon}"></i>
-                <div class="result-text">
-                    <div>${result.displayText}</div>
-                    <span class="result-section">${result.section}</span>
-                </div>
-            </div>
-        `;
-    });
-    
-    modalResults.innerHTML = html;
-});
 
-// البحث عند الضغط على Enter
-modalInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        const query = this.value.trim();
-        if (query.length > 0) {
-            const results = searchContent(query);
-            if (results.length > 0) {
-                window.location.href = results[0].link;
-                closeModal();
-            }
-        }
-    }
-});
+  </script>
 
-console.log('🔍 محرك البحث المنبثق جاهز!');
-console.log('💡 اضغط على زر "بحث" في الهيدر لفتح نافذة البحث.');
-</script>
 </body>
 </html>
