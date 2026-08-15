@@ -1,560 +1,284 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- توافق جميع الأجهزة -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- معلومات السيو الأساسية (SEO) -->
+    <title>يوسف سقيل | الموقع الرسمي</title>
+    <meta name="description" content="الموقع الرسمي ليوسف سقيل. تعرف على السيرة الذاتية، المشاريع، وطرق التواصل.">
+    <meta name="keywords" content="يوسف سقيل, موقع شخصي, سيرة ذاتية, مشاريع, تواصل">
+    <meta name="author" content="يوسف سقيل">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yusifhassan2027-lang.github.io/my-first-website/">
 
-  <!-- معلومات محركات البحث -->
-  <title>يوسف سقيل | موقعي الإلكتروني الرسمي</title>
+    <!-- بيانات المشاركة على وسائل التواصل (Open Graph) -->
+    <meta property="og:title" content="يوسف سقيل | الموقع الرسمي">
+    <meta property="og:description" content="الموقع الرسمي ليوسف سقيل. تعرف على السيرة الذاتية، المشاريع، وطرق التواصل.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
 
-  <meta name="description"
-        content="الموقع الإلكتروني الرسمي ليوسف سقيل. تعرف على يوسف سقيل ومعلومات الموقع وأحدث المحتويات.">
+    <style>
+        /* ===== الأنماط العامة ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            transition: background-color 0.5s ease, color 0.3s ease;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: background 0.5s ease;
+        }
 
-  <meta name="keywords"
-        content="يوسف سقيل, يوسف, سقيل, موقع يوسف سقيل, yusif hassan">
+        /* ===== الألوان ===== */
+        body.dark { background-color: #1a1a1a; color: #eee; }
+        body.dark .container { background: #2d2d2d; color: #eee; }
+        body.dark nav a { color: #ddd; }
+        body.dark .btn { background: #444; color: #fff; }
 
-  <meta name="author" content="يوسف سقيل">
+        body.cyan { background-color: #e0f7fa; }
+        body.cyan .container { background: #e0f2f1; }
 
-  <meta name="robots" content="index, follow">
+        body.yellow { background-color: #fff9c4; }
+        body.yellow .container { background: #fffde7; }
 
-  <!-- الرابط الأساسي للموقع -->
-  <link rel="canonical"
-        href="https://yusifhassan2027-lang.github.io/my-first-website/">
+        /* ===== الهيدر والقائمة ===== */
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            color: #0077b6;
+        }
+        body.dark .logo h1 { color: #4fc3f7; }
 
-  <!-- Open Graph عند مشاركة الموقع -->
-  <meta property="og:title" content="يوسف سقيل | موقعي الإلكتروني الرسمي">
-  <meta property="og:description"
-        content="الموقع الإلكتروني الرسمي ليوسف سقيل.">
-  <meta property="og:type" content="website">
-  <meta property="og:url"
-        content="https://yusifhassan2027-lang.github.io/my-first-website/">
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin: 10px 0;
+        }
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #0077b6;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        nav a:hover { border-bottom-color: #0077b6; }
+        body.dark nav a:hover { border-bottom-color: #4fc3f7; }
 
-  <!-- لون المتصفح على الهاتف -->
-  <meta name="theme-color" content="#111827">
+        /* ===== الأزرار ===== */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0 5px;
+        }
+        .btn {
+            border: none;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            background: #e9ecef;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .btn:hover { transform: scale(1.02); opacity: 0.8; }
+        .btn-dark { background: #222; color: #fff; }
+        .btn-cyan { background: #00bcd4; color: #fff; }
+        .btn-yellow { background: #ffeb3b; color: #333; }
+        .btn-wave {
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb);
+            color: #fff;
+        }
 
-  <!-- =========================
-       CSS - التصميم
-  ========================== -->
-  <style>
+        /* ===== المحتوى ===== */
+        .hero {
+            text-align: center;
+            padding: 30px 0 20px;
+        }
+        .hero img {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 4px solid #0077b6;
+        }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 15px; }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        .section {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+        .section h3 {
+            font-size: 1.6rem;
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+        body.dark .section h3 { color: #4fc3f7; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .contact-form button {
+            background: #0077b6;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        body.dark .contact-form input,
+        body.dark .contact-form textarea {
+            background: #444;
+            color: #fff;
+            border-color: #666;
+        }
 
-    body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: #f4f6f8;
-      color: #222;
-      line-height: 1.8;
-      transition: 0.4s;
-    }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 20px;
+        }
+        body.dark footer { color: #aaa; border-top-color: #444; }
 
-    /* الهيدر */
-    header {
-      background: linear-gradient(135deg, #111827, #1f2937);
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      color: #d1d5db;
-      font-size: 17px;
-    }
-
-    /* القائمة */
-    nav {
-      background: #0f172a;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    /* المحتوى */
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 35px 15px;
-    }
-
-    section {
-      background: white;
-      margin-bottom: 25px;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    section h2 {
-      color: #1d4ed8;
-      margin-bottom: 15px;
-      font-size: 27px;
-    }
-
-    section p {
-      font-size: 18px;
-    }
-
-    /* الأزرار */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    button {
-      border: none;
-      padding: 13px 22px;
-      border-radius: 9px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      background: #2563eb;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: translateY(-3px);
-      opacity: 0.9;
-    }
-
-    .black {
-      background: #000;
-    }
-
-    .cyan {
-      background: #06b6d4;
-    }
-
-    .yellow {
-      background: #eab308;
-      color: #111;
-    }
-
-    .wave {
-      background: linear-gradient(
-        120deg,
-        #06b6d4,
-        #2563eb,
-        #9333ea,
-        #ec4899
-      );
-      background-size: 300% 300%;
-      animation: wave 5s ease infinite;
-    }
-
-    @keyframes wave {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    /* بطاقة الترحيب */
-    .hero {
-      text-align: center;
-      padding: 55px 25px;
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
-    }
-
-    .hero h2 {
-      font-size: 35px;
-      color: #1e3a8a;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 15px auto;
-    }
-
-    /* نموذج التواصل */
-    form {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 13px;
-      margin: 8px 0 15px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 16px;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    /* الفوتر */
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 30px;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    /* زر العودة للأعلى */
-    #topButton {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #2563eb;
-      display: none;
-      z-index: 2000;
-      padding: 0;
-    }
-
-    /* الجوال */
-    @media (max-width: 600px) {
-
-      header h1 {
-        font-size: 25px;
-      }
-
-      nav a {
-        padding: 8px 12px;
-        font-size: 14px;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      .hero h2 {
-        font-size: 27px;
-      }
-
-      section p {
-        font-size: 16px;
-      }
-    }
-
-  </style>
+        /* ===== توافق الجوال ===== */
+        @media (max-width: 700px) {
+            header { flex-direction: column; align-items: stretch; text-align: center; }
+            nav { justify-content: center; }
+            .btn-group { justify-content: center; }
+            .hero h2 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
-
 <body>
-
-  <!-- =========================
-       رأس الموقع
-  ========================== -->
-  <header>
-
-    <h1>يوسف سقيل</h1>
-
-    <p>
-      مرحبًا بكم في موقعي الإلكتروني الرسمي
-    </p>
-
-  </header>
-
-
-  <!-- =========================
-       القائمة الرئيسية
-  ========================== -->
-  <nav>
-
-    <a href="#home">🏠 الرئيسية</a>
-
-    <a href="#about">👤 من أنا</a>
-
-    <a href="#contact">📞 اتصل بنا</a>
-
-  </nav>
-
-
-  <!-- =========================
-       المحتوى الرئيسي
-  ========================== -->
-  <main>
-
-    <!-- الرئيسية -->
-    <section id="home" class="hero">
-
-      <h2>
-        مرحبًا بكم في موقع يوسف سقيل
-      </h2>
-
-      <p>
-        هذا هو الموقع الإلكتروني الرسمي ليوسف سقيل،
-        ويمكنك من خلاله التعرف على الموقع ومحتواه.
-      </p>
-
-      <div class="buttons">
-
-        <button onclick="changeColor('black')" class="black">
-          ⚫ أسود
-        </button>
-
-        <button onclick="changeColor('cyan')" class="cyan">
-          🔵 سماوي
-        </button>
-
-        <button onclick="changeColor('yellow')" class="yellow">
-          🟡 أصفر
-        </button>
-
-        <button onclick="changeColor('wave')" class="wave">
-          🌈 ألوان متحركة
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- من أنا -->
-    <section id="about">
-
-      <h2>👤 من أنا</h2>
-
-      <p>
-        أنا يوسف سقيل، وهذا موقعي الإلكتروني الشخصي.
-        تم إنشاء هذا الموقع باستخدام تقنيات HTML وCSS وJavaScript.
-      </p>
-
-    </section>
-
-
-    <!-- التواصل -->
-    <section id="contact">
-
-      <h2>📞 اتصل بنا</h2>
-
-      <p>
-        يمكنك استخدام النموذج التالي للتواصل.
-      </p>
-
-      <form onsubmit="sendMessage(event)">
-
-        <label for="name">
-          الاسم
-        </label>
-
-        <input
-          type="text"
-          id="name"
-          placeholder="اكتب اسمك"
-          required
-        >
-
-        <label for="email">
-          البريد الإلكتروني
-        </label>
-
-        <input
-          type="email"
-          id="email"
-          placeholder="example@email.com"
-          required
-        >
-
-        <label for="message">
-          الرسالة
-        </label>
-
-        <textarea
-          id="message"
-          placeholder="اكتب رسالتك هنا..."
-          required
-        ></textarea>
-
-        <button type="submit">
-          إرسال الرسالة
-        </button>
-
-      </form>
-
-    </section>
-
-  </main>
-
-
-  <!-- العودة للأعلى -->
-  <button id="topButton" onclick="goTop()">
-    ↑
-  </button>
-
-
-  <!-- =========================
-       الفوتر
-  ========================== -->
-  <footer>
-
-    <p>
-      © 2026 يوسف سقيل
-    </p>
-
-    <p>
-      جميع الحقوق محفوظة.
-    </p>
-
-  </footer>
-
-
-  <!-- =========================
-       JavaScript
-  ========================== -->
-  <script>
-
-    /* تغيير لون الصفحة */
-
-    function changeColor(color) {
-
-      if (color === "black") {
-
-        document.body.style.background =
-          "#000000";
-
-        document.body.style.color =
-          "#ffffff";
-
-      }
-
-      else if (color === "cyan") {
-
-        document.body.style.background =
-          "#06b6d4";
-
-        document.body.style.color =
-          "#ffffff";
-
-      }
-
-      else if (color === "yellow") {
-
-        document.body.style.background =
-          "#facc15";
-
-        document.body.style.color =
-          "#111111";
-
-      }
-
-      else if (color === "wave") {
-
-        document.body.style.background =
-          "linear-gradient(120deg,#06b6d4,#2563eb,#9333ea,#ec4899)";
-
-        document.body.style.backgroundSize =
-          "300% 300%";
-
-        document.body.style.color =
-          "#ffffff";
-
-        document.body.style.animation =
-          "wave 5s ease infinite";
-
-      }
-
-    }
-
-
-    /* نموذج التواصل */
-
-    function sendMessage(event) {
-
-      event.preventDefault();
-
-      const name =
-        document.getElementById("name").value;
-
-      alert(
-        "شكرًا لك يا " +
-        name +
-        "، تم استلام رسالتك."
-      );
-
-    }
-
-
-    /* إظهار زر العودة للأعلى */
-
-    window.addEventListener("scroll", function () {
-
-      const button =
-        document.getElementById("topButton");
-
-      if (window.scrollY > 300) {
-
-        button.style.display = "block";
-
-      } else {
-
-        button.style.display = "none";
-
-      }
-
-    });
-
-
-    /* العودة للأعلى */
-
-    function goTop() {
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-    }
-
-  </script>
-
+    <div class="container">
+
+        <!-- الهيدر والقائمة -->
+        <header>
+            <div class="logo">
+                <h1>يوسف سقيل</h1>
+            </div>
+            <nav>
+                <a href="index.html">الرئيسية</a>
+                <a href="#about">من نحن</a>
+                <a href="#contact">اتصل بنا</a>
+                <a href="login.html">تسجيل الدخول</a>
+                <a href="register.html">إنشاء حساب</a>
+            </nav>
+        </header>
+
+        <!-- أزرار تغيير اللون -->
+        <div class="btn-group">
+            <button class="btn btn-dark" onclick="changeTheme('dark')">⚫ أسود</button>
+            <button class="btn btn-cyan" onclick="changeTheme('cyan')">سماوي</button>
+            <button class="btn btn-yellow" onclick="changeTheme('yellow')">أصفر</button>
+            <button class="btn btn-wave" onclick="changeTheme('wave')">🌊 متموج</button>
+            <button class="btn" onclick="changeTheme('default')">↩️ افتراضي</button>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <section class="hero">
+            <img src="https://via.placeholder.com/150/0077b6/ffffff?text=YS" alt="شعار يوسف سقيل">
+            <h2>مرحبًا بكم في موقع يوسف سقيل</h2>
+            <p>هذا هو الموقع الإلكتروني الرسمي ليوسف سقيل. يمكنك من خلاله التعرف على السيرة الذاتية، المشاريع، وآخر الأعمال.</p>
+        </section>
+
+        <section id="about" class="section">
+            <h3>👤 من نحن</h3>
+            <p>أنا يوسف سقيل، مهتم بتقنية المعلومات وتطوير المواقع. هذا الموقع هو منصة شخصية لعرض المشاريع والخبرات، ويهدف إلى تقديم محتوى مفيد في مجال البرمجة والتصميم.</p>
+            <p>تم بناء هذا الموقع باستخدام تقنيات <strong>HTML، CSS، وJavaScript</strong>، مع تصميم متجاوب يتناسب مع جميع الأجهزة.</p>
+        </section>
+
+        <section id="contact" class="section contact-form">
+            <h3>📞 اتصل بنا</h3>
+            <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك! شكراً للتواصل.');">
+                <input type="text" placeholder="الاسم الكامل" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <textarea rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+                <button type="submit">إرسال الرسالة</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2026 يوسف سقيل. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script>
+        // ===== وظيفة تغيير الثيم =====
+        function changeTheme(theme) {
+            // إزالة جميع الكلاسات السابقة
+            document.body.classList.remove('dark', 'cyan', 'yellow', 'wave');
+
+            if (theme === 'default') {
+                // لا نضيف أي كلاسة، نعيد الألوان الافتراضية
+                return;
+            }
+
+            if (theme === 'wave') {
+                // تأثير متموج: نطبق كلاسات مع تغيير الخلفية تدريجياً
+                document.body.style.background = 'linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1)';
+                document.body.style.backgroundSize = '400% 400%';
+                document.body.style.animation = 'waveBackground 8s ease infinite';
+                // نحتفظ بلون النص غامقاً للوضوح
+                document.body.style.color = '#222';
+                // نعيد تعيين خلفية الحاوية لتكون شفافة قليلاً
+                const container = document.querySelector('.container');
+                container.style.background = 'rgba(255,255,255,0.85)';
+                container.style.backdropFilter = 'blur(4px)';
+                return;
+            } else {
+                // إزالة تأثير الموجة إذا كان مطبقاً
+                document.body.style.background = '';
+                document.body.style.animation = '';
+                document.querySelector('.container').style.background = '';
+                document.querySelector('.container').style.backdropFilter = '';
+                // إضافة الكلاسة المطلوبة
+                document.body.classList.add(theme);
+            }
+        }
+
+        // ===== إضافة حركة الموجة باستخدام CSS Keyframes =====
+        const styleSheet = document.createElement("style");
+        styleSheet.textContent = `
+            @keyframes waveBackground {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
 </body>
 </html>
