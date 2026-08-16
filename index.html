@@ -2,458 +2,1667 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO Primary Meta Tags -->
+
   <title>يوسف سقيل | الموقع الشخصي الرسمي</title>
-  <meta name="description" content="الموقع الشخصي ليوسف سقيل – استشارات، مشاريع، تواصل، والمزيد. تعرف على أعماله وشارك رأيك.">
-  <meta name="keywords" content="يوسف سقيل, يوسف, سقيل, استشارات, مشاريع, موقع شخصي, Yusuf Saqil, personal website">
+
+  <meta name="description" content="الموقع الشخصي الرسمي ليوسف سقيل. تعرف على المشاريع والخدمات والاستشارات وتواصل مع يوسف سقيل.">
+
+  <meta name="keywords" content="يوسف سقيل, يوسف, سقيل, Yusuf Saqil, مشاريع, استشارات, موقع شخصي">
+
   <meta name="author" content="يوسف سقيل">
+
+  <meta name="robots" content="index, follow">
+
   <link rel="canonical" href="https://yusifhassan2027-lang.github.io/my-first-website/">
-  <!-- Open Graph / Facebook -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
   <meta property="og:title" content="يوسف سقيل | الموقع الشخصي الرسمي">
-  <meta property="og:description" content="استشارات، مشاريع، تواصل، والمزيد. تعرف على أعمال يوسف سقيل وشارك رأيك.">
-  <meta property="og:image" content="https://yusifhassan2027-lang.github.io/my-first-website/assets/og-image.jpg">
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
-  <meta property="twitter:title" content="يوسف سقيل | الموقع الشخصي الرسمي">
-  <meta property="twitter:description" content="استشارات، مشاريع، تواصل، والمزيد. تعرف على أعمال يوسف سقيل وشارك رأيك.">
-  <meta property="twitter:image" content="https://yusifhassan2027-lang.github.io/my-first-website/assets/og-image.jpg">
-  <!-- Fonts & Icons -->
+  <meta property="og:description" content="الموقع الشخصي الرسمي ليوسف سقيل. المشاريع والاستشارات والتواصل.">
+  <meta property="og:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
+  <meta property="og:image" content="https://yusifhassan2027-lang.github.io/my-first-website/assets/0e8e13629574cb93b20ef44aa0500e65.jpg">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="يوسف سقيل | الموقع الشخصي الرسمي">
+  <meta name="twitter:description" content="الموقع الشخصي الرسمي ليوسف سقيل.">
+  <meta name="twitter:image" content="https://yusifhassan2027-lang.github.io/my-first-website/assets/0e8e13629574cb93b20ef44aa0500e65.jpg">
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Primary style -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
+
+    /* ==============================
+       ROOT
+    ============================== */
+
     :root {
-      --bg: #f8fafc;
+      --bg: #f5f7fb;
       --surface: #ffffff;
-      --text: #0f172a;
-      --text-secondary: #334155;
+      --surface-2: #eef3ff;
+      --text: #111827;
+      --muted: #64748b;
       --primary: #2563eb;
-      --primary-light: #3b82f6;
+      --primary-dark: #1d4ed8;
       --accent: #f59e0b;
       --border: #e2e8f0;
-      --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
-      --radius: 1.25rem;
+      --shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
       --transition: 0.3s ease;
-      --hero-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #0ea5e9 100%);
     }
-    .dark {
-      --bg: #0b1120;
-      --surface: #1e293b;
-      --text: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --border: #334155;
-      --shadow: 0 15px 30px -10px rgba(0,0,0,0.6);
-      --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%);
+
+    body.dark {
+      --bg: #070d1a;
+      --surface: #111827;
+      --surface-2: #172033;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --border: #273449;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
-      font-family: 'Cairo', sans-serif;
+      font-family: "Cairo", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      transition: background 0.4s, color 0.3s;
+      line-height: 1.8;
+      transition: background 0.3s ease, color 0.3s ease;
     }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(1100px, 90%); margin-inline: auto; }
 
-    /* Header & Nav */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: var(--surface);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      transition: background 0.3s;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    .nav-container {
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* ==============================
+       HEADER
+    ============================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.dark header {
+      background: rgba(17,24,39,0.9);
+    }
+
+    .nav {
+      min-height: 75px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 0.75rem 1.5rem;
+
+      gap: 20px;
     }
+
+    /* LOGO */
+
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+
+      font-size: 1.25rem;
       font-weight: 900;
-      font-size: 1.5rem;
-      color: var(--text);
+
+      white-space: nowrap;
     }
-    .brand-logo {
-      width: 42px; height: 42px;
-      background: var(--primary);
-      border-radius: 12px;
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+
       display: grid;
       place-items: center;
+
       color: white;
-      font-size: 1.8rem;
-      box-shadow: 0 4px 10px rgba(37,99,235,0.3);
+
+      background:
+        linear-gradient(135deg,
+        #2563eb,
+        #0ea5e9);
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 8px 20px rgba(37,99,235,0.25);
+
+      font-size: 1.4rem;
     }
+
+    /* NAVIGATION */
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.2rem;
+      gap: 8px;
+
       list-style: none;
-      flex-wrap: wrap;
     }
+
     .nav-links a {
+      display: block;
+
+      padding: 8px 12px;
+
+      border-radius: 12px;
+
       font-weight: 600;
-      padding: 0.4rem 0.8rem;
-      border-radius: 30px;
+
       transition: var(--transition);
     }
-    .nav-links a:hover { background: var(--primary); color: white; }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ACTIONS */
+
     .nav-actions {
       display: flex;
-      gap: 8px;
       align-items: center;
+      gap: 8px;
     }
-    .icon-btn {
-      background: var(--surface);
+
+    .icon-button {
+      width: 42px;
+      height: 42px;
+
       border: 1px solid var(--border);
-      border-radius: 40px;
-      width: 42px; height: 42px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      font-size: 1.2rem;
+
+      background: var(--surface);
+
       color: var(--text);
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 1rem;
+
       transition: var(--transition);
     }
-    .icon-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-    /* Hero section */
-    .hero {
-      margin-top: 80px;
-      background: var(--hero-gradient);
+    .icon-button:hover {
+      background: var(--primary);
       color: white;
-      padding: 4rem 1rem 5rem;
-      text-align: center;
-      position: relative;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
+      border-color: var(--primary);
+      transform: translateY(-2px);
     }
-    .hero-img {
-      width: 160px; height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1.5rem;
-      border: 6px solid rgba(255,255,255,0.6);
-      box-shadow: 0 20px 35px rgba(0,0,0,0.3);
-      background: #fff;
-    }
-    .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; }
-    .hero p { font-size: 1.3rem; opacity: 0.9; margin-top: 0.5rem; }
 
-    /* sections */
-    section { padding: 4rem 0; }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 900;
-      margin-bottom: 2rem;
+    /* LANGUAGE MENU */
+
+    .language {
       position: relative;
-      display: inline-block;
     }
-    .section-title::after {
-      content: '';
+
+    .language-menu {
       position: absolute;
-      bottom: -10px; right: 0;
-      width: 60px; height: 5px;
-      background: var(--accent);
-      border-radius: 5px;
+
+      top: 52px;
+      right: 0;
+
+      min-width: 160px;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: 15px;
+
+      padding: 8px;
+
+      box-shadow: var(--shadow);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(-8px);
+
+      transition: var(--transition);
     }
+
+    .language.open .language-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .language-menu button {
+      width: 100%;
+
+      border: none;
+
+      background: transparent;
+
+      color: var(--text);
+
+      padding: 10px;
+
+      border-radius: 10px;
+
+      text-align: right;
+
+      cursor: pointer;
+
+      font-size: 0.95rem;
+    }
+
+    .language-menu button:hover {
+      background: var(--surface-2);
+    }
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+      display: none;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+      min-height: 650px;
+
+      margin-top: 75px;
+
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+
+      color: white;
+
+      background:
+        radial-gradient(circle at top left,
+        rgba(14,165,233,0.4),
+        transparent 35%),
+
+        linear-gradient(135deg,
+        #0f172a,
+        #1d4ed8,
+        #0284c7);
+
+      border-bottom-left-radius: 45px;
+      border-bottom-right-radius: 45px;
+
+      overflow: hidden;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .hero-image {
+      width: 175px;
+      height: 175px;
+
+      object-fit: cover;
+
+      margin: 0 auto 25px;
+
+      border-radius: 50%;
+
+      border: 6px solid rgba(255,255,255,0.8);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+
+      font-weight: 900;
+
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+
+      opacity: 0.9;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 12px 24px;
+
+      border-radius: 40px;
+
+      border: none;
+
+      cursor: pointer;
+
+      font-weight: 700;
+
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: white;
+      color: #1d4ed8;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.7);
+      color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #1d4ed8;
+    }
+
+    /* ==============================
+       SECTIONS
+    ============================== */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+
+      font-weight: 900;
+
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* ==============================
+       CARDS
+    ============================== */
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 25px;
     }
+
     .card {
       background: var(--surface);
+
       border: 1px solid var(--border);
-      padding: 2rem 1.5rem;
+
       border-radius: var(--radius);
+
+      padding: 30px;
+
       box-shadow: var(--shadow);
+
       transition: var(--transition);
     }
-    .card:hover { transform: translateY(-6px); }
-    .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
 
-    .social-bar {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2.5rem 0;
-      flex-wrap: wrap;
+    .card:hover {
+      transform: translateY(-7px);
     }
-    .social-bar a {
-      width: 50px; height: 50px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: grid; place-items: center;
-      font-size: 1.6rem;
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--surface-2);
+
       color: var(--primary);
-      transition: var(--transition);
-    }
-    .social-bar a:hover { background: var(--primary); color: white; transform: scale(1.1); }
 
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      font-size: 1.6rem;
+
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* ==============================
+       SOCIAL
+    ============================== */
+
+    .social-section {
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+    .social-link {
+      width: 52px;
+      height: 52px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
       background: var(--surface);
-      color: var(--text);
-      border-radius: 14px;
-      margin-bottom: 1rem;
-      font-family: inherit;
-    }
-    button.primary {
-      background: var(--primary);
-      border: none;
-      color: white;
-      font-weight: 700;
-      padding: 0.9rem 2rem;
-      border-radius: 40px;
-      cursor: pointer;
+
+      border: 1px solid var(--border);
+
+      color: var(--primary);
+
+      font-size: 1.35rem;
+
       transition: var(--transition);
-      font-size: 1rem;
-      display: inline-flex; align-items: center; gap: 8px;
     }
-    button.primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+    .social-link:hover {
+      background: var(--primary);
+
+      color: white;
+
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    /* ==============================
+       FORMS
+    ============================== */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+
+      padding: 13px 15px;
+
+      border-radius: 13px;
+
+      border: 1px solid var(--border);
+
+      background: var(--surface);
+
+      color: var(--text);
+
+      outline: none;
+
+      transition: var(--transition);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 3px rgba(37,99,235,0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-button {
+      background: var(--primary);
+
+      color: white;
+
+      border: none;
+
+      padding: 12px 25px;
+
+      border-radius: 40px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: var(--transition);
+    }
+
+    .form-button:hover {
+      background: var(--primary-dark);
+
+      transform: translateY(-2px);
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
     footer {
       background: var(--surface);
+
       border-top: 1px solid var(--border);
+
+      padding: 35px 0;
+
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+
+      color: var(--muted);
     }
-    .flex { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: center; }
+
+    footer strong {
+      color: var(--text);
+    }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: grid;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .brand span:last-child {
+        font-size: 1rem;
+      }
+
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-image {
+        width: 140px;
+        height: 140px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .hero {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+    }
+
   </style>
 </head>
+
 <body>
-  <!-- Fixed Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <div class="brand">
-        <span class="brand-logo">✦</span>
+
+  <!-- ==============================
+       HEADER
+  ============================== -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a href="#home" class="brand">
+
+        <span class="brand-icon">
+          <i class="fas fa-star"></i>
+        </span>
+
         <span>يوسف سقيل</span>
-      </div>
+
+      </a>
+
       <nav>
+
         <ul class="nav-links">
-          <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
-          <li><a href="#about" data-i18n="nav_about">من أنا</a></li>
-          <li><a href="#projects" data-i18n="nav_projects">مشاريعي</a></li>
-          <li><a href="#consult" data-i18n="nav_consult">الاستشارات</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">تواصل معنا</a></li>
+
+          <li>
+            <a href="#home">الرئيسية</a>
+          </li>
+
+          <li>
+            <a href="#about">من أنا</a>
+          </li>
+
+          <li>
+            <a href="#projects">مشاريعي</a>
+          </li>
+
+          <li>
+            <a href="#consulting">الاستشارات</a>
+          </li>
+
+          <li>
+            <a href="#contact">تواصل معنا</a>
+          </li>
+
         </ul>
+
       </nav>
+
       <div class="nav-actions">
-        <button id="langToggle" class="icon-btn" title="تغيير اللغة">🌐</button>
-        <button id="darkModeToggle" class="icon-btn" title="الوضع الليلي">🌙</button>
+
+        <!-- LANGUAGE -->
+
+        <div class="language" id="languageBox">
+
+          <button
+            class="icon-button"
+            id="languageButton"
+            aria-label="تغيير اللغة">
+
+            🌐
+
+          </button>
+
+          <div class="language-menu">
+
+            <button onclick="changeLanguage('ar')">
+              🇸🇦 العربية
+            </button>
+
+            <button onclick="changeLanguage('en')">
+              🇺🇸 English
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- DARK MODE -->
+
+        <button
+          class="icon-button"
+          id="themeButton"
+          aria-label="الوضع الليلي">
+
+          🌙
+
+        </button>
+
       </div>
+
     </div>
+
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero"><img src="0e8e13629574cb93b20ef44aa0500e65.jpg" alt="صورة يوسف سقيل" class="hero-img" id="heroImage">
-    <h1>يوسف سقيل</h1>
-    <p data-i18n="hero_sub">استشارات · مشاريع · تواصل</p>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+
+  <section id="home" class="hero">
+
+    <div class="container hero-content">
+
+      <img
+        src="assets/0e8e13629574cb93b20ef44aa0500e65.jpg"
+        alt="يوسف سقيل"
+        class="hero-image"
+        loading="eager">
+
+      <h1>يوسف سقيل</h1>
+
+      <p class="hero-subtitle">
+        استشارات · مشاريع · أفكار · تواصل
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-briefcase"></i>
+          استعرض مشاريعي
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-envelope"></i>
+          تواصل معي
+        </a>
+
+      </div>
+
+    </div>
+
   </section>
 
+
   <main>
-    <!-- نبذة عني -->
+
+    <!-- ==============================
+         ABOUT
+    ============================== -->
+
     <section id="about">
+
       <div class="container">
-        <h2 class="section-title" data-i18n="about_title">نبذة عني</h2>
+
+        <div class="section-heading">
+
+          <h2>من أنا</h2>
+
+          <p>
+            نبذة مختصرة عن يوسف سقيل
+          </p>
+
+        </div>
+
         <div class="card">
-          <p data-i18n="about_text">أنا يوسف سقيل، متخصص في تقديم الاستشارات الإدارية والتقنية، أعمل على بناء مشاريع رقمية مبتكرة. أؤمن بأن التكنولوجيا يمكن أن تكون جسراً لتحقيق النجاح. هذا الموقع هو مساحتي الشخصية لمشاركة الأفكار والمشاريع والتواصل معكم.</p>
+
+          <p>
+            أنا يوسف سقيل، أعمل على بناء مشاريع رقمية
+            وتطوير أفكار ومبادرات تهدف إلى تقديم تجربة
+            رقمية حديثة وسهلة الاستخدام.
+          </p>
+
+          <br>
+
+          <p>
+            هذا الموقع هو مساحتي الشخصية لعرض المشاريع
+            والأفكار والخدمات ووسائل التواصل معي.
+          </p>
+
         </div>
-        <div class="social-bar">
-          <!-- social links will be injected by JS from settings.js -->
-        </div>
+
       </div>
+
     </section>
 
-    <!-- المشاريع -->
+
+    <!-- ==============================
+         SOCIAL
+    ============================== -->
+
+    <section class="social-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2>تواصل معي</h2>
+
+          <p>
+            تابعني عبر منصات التواصل الاجتماعي
+          </p>
+
+        </div>
+
+        <div class="social-links" id="socialLinks">
+
+          <!-- سيتم إضافة الروابط من JavaScript -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         PROJECTS
+    ============================== -->
+
     <section id="projects">
+
       <div class="container">
-        <h2 class="section-title" data-i18n="projects_title">المشاريع</h2>
+
+        <div class="section-heading">
+
+          <h2>مشاريعي</h2>
+
+          <p>
+            بعض المشاريع والأفكار الرقمية
+          </p>
+
+        </div>
+
         <div class="grid">
-          <div class="card"><i class="fas fa-code"></i><h3 data-i18n="project1_title">منصة تعليمية</h3><p data-i18n="project1_desc">نظام إدارة محتوى تفاعلي للدورات.</p></div>
-          <div class="card"><i class="fas fa-chart-line"></i><h3 data-i18n="project2_title">تحليل بيانات</h3><p data-i18n="project2_desc">لوحات تحكم ذكية لاتخاذ القرار.</p></div>
-          <div class="card"><i class="fas fa-mobile-alt"></i><h3 data-i18n="project3_title">تطبيق جوال</h3><p data-i18n="project3_desc">تطبيق لحجز الخدمات عبر الهاتف.</p></div>
+
+          <article class="card">
+
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
+            </div>
+
+            <h3>مشاريع الويب</h3>
+
+            <p>
+              تصميم وتطوير مواقع إلكترونية حديثة
+              ومتجاوبة مع مختلف الأجهزة.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+
+            <h3>الأفكار الرقمية</h3>
+
+            <p>
+              تطوير أفكار ومشاريع رقمية قابلة للتطوير
+              والتحسين المستمر.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
+              <i class="fas fa-mobile-screen"></i>
+            </div>
+
+            <h3>التجارب الرقمية</h3>
+
+            <p>
+              بناء واجهات سهلة الاستخدام ومناسبة
+              للجوال والكمبيوتر.
+            </p>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- الاستشارات -->
-    <section id="consult">
+
+    <!-- ==============================
+         CONSULTING
+    ============================== -->
+
+    <section id="consulting">
+
       <div class="container">
-        <h2 class="section-title" data-i18n="consult_title">الاستشارات</h2>
-        <div class="flex">
-          <div class="card" style="max-width:400px;"><i class="fas fa-briefcase"></i><h3 data-i18n="consult1">استشارات إدارية</h3><p data-i18n="consult1_desc">تطوير العمليات وبناء الفرق.</p></div>
-          <div class="card" style="max-width:400px;"><i class="fas fa-laptop-code"></i><h3 data-i18n="consult2">استشارات تقنية</h3><p data-i18n="consult2_desc">حلول رقمية وتحول تقني.</p></div>
+
+        <div class="section-heading">
+
+          <h2>الاستشارات</h2>
+
+          <p>
+            خدمات واستشارات رقمية
+          </p>
+
         </div>
+
+        <div class="grid">
+
+          <article class="card">
+
+            <div class="card-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+
+            <h3>استشارات تقنية</h3>
+
+            <p>
+              المساعدة في اختيار الحلول والأفكار
+              التقنية المناسبة للمشاريع.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+
+            <h3>تطوير المواقع</h3>
+
+            <p>
+              أفكار وحلول لتطوير المواقع وتحسين
+              تجربة المستخدم.
+            </p>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- شارك رأيك / أرسل اقتراح / الإبلاغ عن مشكلة / تواصل -->
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
     <section id="contact">
+
       <div class="container">
-        <h2 class="section-title" data-i18n="contact_title">تواصل معنا</h2>
-        <div class="grid" style="grid-template-columns: 1fr 1fr;">
-          <div>
-            <h3><i class="fas fa-comment"></i> <span data-i18n="opinion_title">شارك رأيك</span></h3>
-            <form id="opinionForm"><input type="text" placeholder="رأيك..." data-i18n-ph="opinion_ph"><button class="primary" type="submit" data-i18n="send">إرسال</button></form>
-            <h3 style="margin-top:1.5rem;"><i class="fas fa-lightbulb"></i> <span data-i18n="suggest_title">أرسل اقتراح</span></h3>
-            <form id="suggestForm"><input type="text" placeholder="اقتراحك..." data-i18n-ph="suggest_ph"><button class="primary" type="submit" data-i18n="send">إرسال</button></form>
-            <h3 style="margin-top:1.5rem;"><i class="fas fa-exclamation-triangle"></i> <span data-i18n="report_title">الإبلاغ عن مشكلة</span></h3>
-            <form id="reportForm"><input type="text" placeholder="وصف المشكلة..." data-i18n-ph="report_ph"><button class="primary" type="submit" data-i18n="send">إرسال</button></form>
-          </div>
-          <div>
-            <h3><i class="fas fa-envelope"></i> <span data-i18n="contact_form_title">نموذج التواصل</span></h3>
-            <form id="mainContactForm">
-              <input type="text" placeholder="الاسم" data-i18n-ph="name_ph">
-              <input type="email" placeholder="البريد الإلكتروني" data-i18n-ph="email_ph">
-              <textarea rows="3" placeholder="رسالتك" data-i18n-ph="message_ph"></textarea>
-              <button class="primary" type="submit" data-i18n="send">إرسال</button>
-            </form>
-          </div>
+
+        <div class="section-heading">
+
+          <h2>تواصل معنا</h2>
+
+          <p>
+            يمكنك التواصل وإرسال رأيك أو اقتراحك
+          </p>
+
         </div>
+
+        <div class="contact-grid">
+
+
+          <!-- CONTACT FORM -->
+
+          <div class="card">
+
+            <h3>
+              <i class="fas fa-envelope"></i>
+              أرسل رسالة
+            </h3>
+
+            <br>
+
+            <form id="contactForm">
+
+              <div class="form-group">
+
+                <label>
+                  الاسم
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="اكتب اسمك"
+                  required>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label>
+                  البريد الإلكتروني
+                </label>
+
+                <input
+                  type="email"
+                  placeholder="example@email.com"
+                  required>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label>
+                  الرسالة
+                </label>
+
+                <textarea
+                  placeholder="اكتب رسالتك هنا..."
+                  required></textarea>
+
+              </div>
+
+
+              <button
+                type="submit"
+                class="form-button">
+
+                <i class="fas fa-paper-plane"></i>
+
+                إرسال الرسالة
+
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <!-- OPINIONS -->
+
+          <div class="card">
+
+            <h3>
+              <i class="fas fa-comments"></i>
+              شارك رأيك
+            </h3>
+
+            <br>
+
+            <form id="opinionForm">
+
+              <div class="form-group">
+
+                <input
+                  type="text"
+                  placeholder="اكتب رأيك..."
+                  required>
+
+              </div>
+
+              <button
+                class="form-button"
+                type="submit">
+
+                إرسال الرأي
+
+              </button>
+
+            </form>
+
+
+            <br><br>
+
+
+            <h3>
+              <i class="fas fa-lightbulb"></i>
+              أرسل اقتراح
+            </h3>
+
+            <br>
+
+            <form id="suggestionForm">
+
+              <div class="form-group">
+
+                <textarea
+                  placeholder="اكتب اقتراحك..."
+                  required></textarea>
+
+              </div>
+
+              <button
+                class="form-button"
+                type="submit">
+
+                إرسال الاقتراح
+
+              </button>
+
+            </form>
+
+
+            <br><br>
+
+
+            <h3>
+              <i class="fas fa-triangle-exclamation"></i>
+              الإبلاغ عن مشكلة
+            </h3>
+
+            <br>
+
+            <form id="reportForm">
+
+              <div class="form-group">
+
+                <textarea
+                  placeholder="صف المشكلة..."
+                  required></textarea>
+
+              </div>
+
+              <button
+                class="form-button"
+                type="submit">
+
+                إرسال البلاغ
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
   <footer>
-    <p>© 2025 يوسف سقيل | جميع الحقوق محفوظة</p>
-    <p style="margin-top:0.5rem; font-size:0.9rem;">صُمم بواسطة يوسف سقيل</p>
+
+    <div class="container">
+
+      <p>
+        © <span id="year"></span>
+        <strong>يوسف سقيل</strong>
+        — جميع الحقوق محفوظة.
+      </p>
+
+      <p>
+        صُمم وطُوّر بواسطة يوسف سقيل
+      </p>
+
+      <p>
+        <a href="mailto:yusifhassan2027@gmail.com">
+          yusifhassan2027@gmail.com
+        </a>
+      </p>
+
+    </div>
+
   </footer>
 
-  <!-- settings.js external (holds social links & config) -->
-  <script src="assets/settings.js"></script>
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
   <script>
-    (function() {
-      // Dark mode toggle
-      const darkToggle = document.getElementById('darkModeToggle');
-      darkToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        darkToggle.innerHTML = document.body.classList.contains('dark') ? '☀️' : '🌙';
-        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-      });
-      if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark');
-        darkToggle.innerHTML = '☀️';
+
+    /* ==============================
+       SITE SETTINGS
+    ============================== */
+
+    const siteSettings = {
+
+      email:
+        "yusifhassan2027@gmail.com",
+
+      website:
+        "https://yusifhassan2027-lang.github.io/my-first-website/",
+
+      socialLinks: [
+
+        {
+          name: "WhatsApp",
+          icon: "fab fa-whatsapp",
+          url: "#"
+        },
+
+        {
+          name: "Instagram",
+          icon: "fab fa-instagram",
+          url: "#"
+        },
+
+        {
+          name: "Facebook",
+          icon: "fab fa-facebook",
+          url: "#"
+        },
+
+        {
+          name: "X",
+          icon: "fab fa-x-twitter",
+          url: "#"
+        },
+
+        {
+          name: "Telegram",
+          icon: "fab fa-telegram",
+          url: "#"
+        },
+
+        {
+          name: "GitHub",
+          icon: "fab fa-github",
+          url: "#"
+        },
+
+        {
+          name: "Email",
+          icon: "fas fa-envelope",
+          url: "mailto:yusifhassan2027@gmail.com"
+        }
+
+      ]
+
+    };
+
+
+    /* ==============================
+       SOCIAL LINKS
+    ============================== */
+
+    const socialContainer =
+      document.getElementById("socialLinks");
+
+    siteSettings.socialLinks.forEach(link => {
+
+      const a =
+        document.createElement("a");
+
+      a.className =
+        "social-link";
+
+      a.href =
+        link.url;
+
+      a.title =
+        link.name;
+
+      a.setAttribute(
+        "aria-label",
+        link.name
+      );
+
+      if (
+        link.url !== "#" &&
+        !link.url.startsWith("mailto:")
+      ) {
+
+        a.target = "_blank";
+
+        a.rel =
+          "noopener noreferrer";
+
       }
 
-      // Language toggle
-      const langToggle = document.getElementById('langToggle');
-      let currentLang = 'ar';
-      langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'ar' ? 'en' : 'ar';
-        applyLanguage(currentLang);
-      });
+      a.innerHTML =
+        `<i class="${link.icon}"></i>`;
 
-      // Translations dictionary
-      const translations = {
-        ar: {
-          nav_home: 'الرئيسية', nav_about: 'من أنا', nav_projects: 'مشاريعي', nav_consult: 'الاستشارات', nav_contact: 'تواصل معنا',
-          hero_sub: 'استشارات · مشاريع · تواصل',
-          about_title: 'نبذة عني',
-          about_text: 'أنا يوسف سقيل، متخصص في تقديم الاستشارات الإدارية والتقنية، أعمل على بناء مشاريع رقمية مبتكرة.',
-          projects_title: 'المشاريع',
-          project1_title: 'منصة تعليمية', project1_desc: 'نظام إدارة محتوى تفاعلي للدورات.',
-          project2_title: 'تحليل بيانات', project2_desc: 'لوحات تحكم ذكية لاتخاذ القرار.',
-          project3_title: 'تطبيق جوال', project3_desc: 'تطبيق لحجز الخدمات عبر الهاتف.',
-          consult_title: 'الاستشارات',
-          consult1: 'استشارات إدارية', consult1_desc: 'تطوير العمليات وبناء الفرق.',
-          consult2: 'استشارات تقنية', consult2_desc: 'حلول رقمية وتحول تقني.',
-          opinion_title: 'شارك رأيك', suggest_title: 'أرسل اقتراح', report_title: 'الإبلاغ عن مشكلة',
-          contact_form_title: 'نموذج التواصل', send: 'إرسال',
-          opinion_ph: 'رأيك...', suggest_ph: 'اقتراحك...', report_ph: 'وصف المشكلة...',
-          name_ph: 'الاسم', email_ph: 'البريد الإلكتروني', message_ph: 'رسالتك',
-          contact_title: 'تواصل معنا'
-        },
-        en: {
-          nav_home: 'Home', nav_about: 'About', nav_projects: 'Projects', nav_consult: 'Consulting', nav_contact: 'Contact',
-          hero_sub: 'Consulting · Projects · Contact',
-          about_title: 'About Me',
-          about_text: 'I am Yusuf Saqil, specializing in management and technical consulting, building innovative digital projects.',
-          projects_title: 'Projects',
-          project1_title: 'E-Learning Platform', project1_desc: 'Interactive content management system for courses.',
-          project2_title: 'Data Analytics', project2_desc: 'Smart dashboards for decision making.',
-          project3_title: 'Mobile App', project3_desc: 'App for booking services via phone.',
-          consult_title: 'Consulting',
-          consult1: 'Management Consulting', consult1_desc: 'Process development and team building.',
-          consult2: 'Technical Consulting', consult2_desc: 'Digital solutions and transformation.',
-          opinion_title: 'Share Opinion', suggest_title: 'Send Suggestion', report_title: 'Report Problem',
-          contact_form_title: 'Contact Form', send: 'Send',
-          opinion_ph: 'Your opinion...', suggest_ph: 'Your suggestion...', report_ph: 'Describe problem...',
-          name_ph: 'Name', email_ph: 'Email', message_ph: 'Message',
-          contact_title: 'Contact Us'
-        }
+      socialContainer.appendChild(a);
+
+    });
+
+
+    /* ==============================
+       DARK MODE
+    ============================== */
+
+    const themeButton =
+      document.getElementById("themeButton");
+
+    function updateThemeIcon() {
+
+      themeButton.textContent =
+        document.body.classList.contains("dark")
+          ? "☀️"
+          : "🌙";
+
+    }
+
+    themeButton.addEventListener(
+      "click",
+      () => {
+
+        document.body.classList.toggle("dark");
+
+        const theme =
+          document.body.classList.contains("dark")
+            ? "dark"
+            : "light";
+
+        localStorage.setItem(
+          "yusuf-theme",
+          theme
+        );
+
+        updateThemeIcon();
+
+      }
+    );
+
+
+    if (
+      localStorage.getItem("yusuf-theme")
+      === "dark"
+    ) {
+
+      document.body.classList.add("dark");
+
+    }
+
+    updateThemeIcon();
+
+
+    /* ==============================
+       LANGUAGE MENU
+    ============================== */
+
+    const languageBox =
+      document.getElementById("languageBox");
+
+    const languageButton =
+      document.getElementById("languageButton");
+
+    languageButton.addEventListener(
+      "click",
+      event => {
+
+        event.stopPropagation();
+
+        languageBox.classList.toggle("open");
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      () => {
+
+        languageBox.classList.remove("open");
+
+      }
+    );
+
+
+    /* ==============================
+       LANGUAGE TRANSLATION
+    ============================== */
+
+    const translations = {
+
+      ar: {
+
+        direction: "rtl",
+
+        title:
+          "يوسف سقيل | الموقع الشخصي الرسمي"
+
+      },
+
+      en: {
+
+        direction: "ltr",
+
+        title:
+          "Yusuf Saqil | Official Personal Website"
+
+      }
+
+    };
+
+
+    function changeLanguage(lang) {
+
+      document.documentElement.lang =
+        lang;
+
+      document.documentElement.dir =
+        translations[lang].direction;
+
+      document.title =
+        translations[lang].title;
+
+      languageBox.classList.remove("open");
+
+      /*
+       * النسخة الإنجليزية الأساسية
+       * يمكن توسيع قاموس الترجمة لاحقًا
+       * لكل عناصر الموقع.
+       */
+
+      if (lang === "en") {
+
+        translateToEnglish();
+
+      } else {
+
+        location.reload();
+
+      }
+
+    }
+
+
+    function translateToEnglish() {
+
+      const textMap = {
+
+        "الرئيسية": "Home",
+
+        "من أنا": "About",
+
+        "مشاريعي": "Projects",
+
+        "الاستشارات": "Consulting",
+
+        "تواصل معنا": "Contact",
+
+        "يوسف سقيل": "Yusuf Saqil",
+
+        "استشارات · مشاريع · أفكار · تواصل":
+          "Consulting · Projects · Ideas · Contact",
+
+        "استعرض مشاريعي":
+          "View My Projects",
+
+        "تواصل معي":
+          "Contact Me",
+
+        "من أنا":
+          "About Me",
+
+        "نبذة مختصرة عن يوسف سقيل":
+          "A brief introduction to Yusuf Saqil",
+
+        "مشاريعي":
+          "My Projects",
+
+        "الاستشارات":
+          "Consulting",
+
+        "تواصل معي":
+          "Contact Me",
+
+        "تواصل معنا":
+          "Contact",
+
+        "شارك رأيك":
+          "Share Your Opinion",
+
+        "أرسل اقتراح":
+          "Send Suggestion",
+
+        "الإبلاغ عن مشكلة":
+          "Report a Problem"
+
       };
 
-      function applyLanguage(lang) {
-        document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
-        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
-        // placeholders
-        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-          const phKey = el.getAttribute('data-i18n-ph');
-          if (translations[lang] && translations[lang][phKey]) {
-            el.setAttribute('placeholder', translations[lang][phKey]);
-          }
-        });
-        // update hero image text? optional
-        langToggle.innerHTML = lang === 'ar' ? '🌐' : '🌐';
-      }
 
-      // Social links injection from settings.js
-      function loadSocialLinks() {
-        const socialContainer = document.querySelector('.social-bar');
-        if (!socialContainer) return;
-        const settings = window.siteSettings || {};
-        const socials = settings.socialLinks || [];
-        socials.forEach(item => {
-          const a = document.createElement('a');
-          a.href = item.url;
-          a.target = '_blank';
-          a.rel = 'noopener';
-          a.innerHTML = `<i class="${item.icon}"></i>`;
-          socialContainer.appendChild(a);
-        });
-      }
-      loadSocialLinks();
+      document
+        .querySelectorAll("a, h1, h2, h3, p, button")
+        .forEach(element => {
 
-      // Simple form submission prevent default
-      document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          alert('تم الإرسال (نموذج تجريبي)');
+          const original =
+            element.textContent.trim();
+
+          if (textMap[original]) {
+
+            element.textContent =
+              textMap[original];
+
+          }
+
         });
+
+    }
+
+
+    /* ==============================
+       FORMS
+    ============================== */
+
+    document
+      .querySelectorAll("form")
+      .forEach(form => {
+
+        form.addEventListener(
+          "submit",
+          event => {
+
+            event.preventDefault();
+
+            alert(
+              "تم استلام طلبك. شكرًا لتواصلك مع يوسف سقيل."
+            );
+
+            form.reset();
+
+          }
+        );
+
       });
 
-      // initial language
-      applyLanguage('ar');
-    })();
+
+    /* ==============================
+       YEAR
+    ============================== */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* ==============================
+       CLOSE LANGUAGE WITH ESC
+    ============================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Escape") {
+
+          languageBox.classList.remove("open");
+
+        }
+
+      }
+    );
+
   </script>
-  <!-- Additional Meta for SEO / robots -->
-  <!-- robots.txt & sitemap.xml provided in repository -->
+
 </body>
 </html>
