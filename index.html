@@ -1,284 +1,460 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Primary Meta Tags -->
+  <title>يوسف سقيل | الموقع الشخصي الرسمي</title>
+  <meta name="description" content="الموقع الشخصي ليوسف سقيل – استشارات، مشاريع، تواصل، والمزيد. تعرف على أعماله وشارك رأيك.">
+  <meta name="keywords" content="يوسف سقيل, يوسف, سقيل, استشارات, مشاريع, موقع شخصي, Yusuf Saqil, personal website">
+  <meta name="author" content="يوسف سقيل">
+  <link rel="canonical" href="https://yusifhassan2027-lang.github.io/my-first-website/">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
+  <meta property="og:title" content="يوسف سقيل | الموقع الشخصي الرسمي">
+  <meta property="og:description" content="استشارات، مشاريع، تواصل، والمزيد. تعرف على أعمال يوسف سقيل وشارك رأيك.">
+  <meta property="og:image" content="https://yusifhassan2027-lang.github.io/my-first-website/assets/og-image.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
+  <meta property="twitter:title" content="يوسف سقيل | الموقع الشخصي الرسمي">
+  <meta property="twitter:description" content="استشارات، مشاريع، تواصل، والمزيد. تعرف على أعمال يوسف سقيل وشارك رأيك.">
+  <meta property="twitter:image" content="https://yusifhassan2027-lang.github.io/my-first-website/assets/og-image.jpg">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Primary style -->
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-secondary: #334155;
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --accent: #f59e0b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+      --radius: 1.25rem;
+      --transition: 0.3s ease;
+      --hero-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #0ea5e9 100%);
+    }
+    .dark {
+      --bg: #0b1120;
+      --surface: #1e293b;
+      --text: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border: #334155;
+      --shadow: 0 15px 30px -10px rgba(0,0,0,0.6);
+      --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background 0.4s, color 0.3s;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1100px, 90%); margin-inline: auto; }
 
-    <!-- معلومات السيو الأساسية (SEO) -->
-    <title>يوسف سقيل | الموقع الرسمي</title>
-    <meta name="description" content="الموقع الرسمي ليوسف سقيل. تعرف على السيرة الذاتية، المشاريع، وطرق التواصل.">
-    <meta name="keywords" content="يوسف سقيل, موقع شخصي, سيرة ذاتية, مشاريع, تواصل">
-    <meta name="author" content="يوسف سقيل">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://yusifhassan2027-lang.github.io/my-first-website/">
+    /* Header & Nav */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: background 0.3s;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.75rem 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--text);
+    }
+    .brand-logo {
+      width: 42px; height: 42px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 10px rgba(37,99,235,0.3);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+      transition: var(--transition);
+    }
+    .nav-links a:hover { background: var(--primary); color: white; }
+    .nav-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .icon-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--text);
+      transition: var(--transition);
+    }
+    .icon-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-    <!-- بيانات المشاركة على وسائل التواصل (Open Graph) -->
-    <meta property="og:title" content="يوسف سقيل | الموقع الرسمي">
-    <meta property="og:description" content="الموقع الرسمي ليوسف سقيل. تعرف على السيرة الذاتية، المشاريع، وطرق التواصل.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yusifhassan2027-lang.github.io/my-first-website/">
+    /* Hero section */
+    .hero {
+      margin-top: 80px;
+      background: var(--hero-gradient);
+      color: white;
+      padding: 4rem 1rem 5rem;
+      text-align: center;
+      position: relative;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    .hero-img {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.5rem;
+      border: 6px solid rgba(255,255,255,0.6);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+      background: #fff;
+    }
+    .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; }
+    .hero p { font-size: 1.3rem; opacity: 0.9; margin-top: 0.5rem; }
 
-    <style>
-        /* ===== الأنماط العامة ===== */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            transition: background-color 0.5s ease, color 0.3s ease;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: background 0.5s ease;
-        }
+    /* sections */
+    section { padding: 4rem 0; }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px; right: 0;
+      width: 60px; height: 5px;
+      background: var(--accent);
+      border-radius: 5px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .card:hover { transform: translateY(-6px); }
+    .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
 
-        /* ===== الألوان ===== */
-        body.dark { background-color: #1a1a1a; color: #eee; }
-        body.dark .container { background: #2d2d2d; color: #eee; }
-        body.dark nav a { color: #ddd; }
-        body.dark .btn { background: #444; color: #fff; }
+    .social-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+    .social-bar a {
+      width: 50px; height: 50px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 1.6rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .social-bar a:hover { background: var(--primary); color: white; transform: scale(1.1); }
 
-        body.cyan { background-color: #e0f7fa; }
-        body.cyan .container { background: #e0f2f1; }
-
-        body.yellow { background-color: #fff9c4; }
-        body.yellow .container { background: #fffde7; }
-
-        /* ===== الهيدر والقائمة ===== */
-        header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-        .logo h1 {
-            font-size: 1.8rem;
-            color: #0077b6;
-        }
-        body.dark .logo h1 { color: #4fc3f7; }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 18px;
-            margin: 10px 0;
-        }
-        nav a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #0077b6;
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-        }
-        nav a:hover { border-bottom-color: #0077b6; }
-        body.dark nav a:hover { border-bottom-color: #4fc3f7; }
-
-        /* ===== الأزرار ===== */
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0 5px;
-        }
-        .btn {
-            border: none;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            background: #e9ecef;
-            color: #333;
-            font-size: 0.9rem;
-        }
-        .btn:hover { transform: scale(1.02); opacity: 0.8; }
-        .btn-dark { background: #222; color: #fff; }
-        .btn-cyan { background: #00bcd4; color: #fff; }
-        .btn-yellow { background: #ffeb3b; color: #333; }
-        .btn-wave {
-            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb);
-            color: #fff;
-        }
-
-        /* ===== المحتوى ===== */
-        .hero {
-            text-align: center;
-            padding: 30px 0 20px;
-        }
-        .hero img {
-            max-width: 150px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 4px solid #0077b6;
-        }
-        .hero h2 { font-size: 2.2rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 15px; }
-
-        .section {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid #dee2e6;
-        }
-        .section h3 {
-            font-size: 1.6rem;
-            color: #0077b6;
-            margin-bottom: 15px;
-        }
-        body.dark .section h3 { color: #4fc3f7; }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        .contact-form button {
-            background: #0077b6;
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        body.dark .contact-form input,
-        body.dark .contact-form textarea {
-            background: #444;
-            color: #fff;
-            border-color: #666;
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 20px;
-        }
-        body.dark footer { color: #aaa; border-top-color: #444; }
-
-        /* ===== توافق الجوال ===== */
-        @media (max-width: 700px) {
-            header { flex-direction: column; align-items: stretch; text-align: center; }
-            nav { justify-content: center; }
-            .btn-group { justify-content: center; }
-            .hero h2 { font-size: 1.6rem; }
-        }
-    </style>
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      font-family: inherit;
+    }
+    button.primary {
+      background: var(--primary);
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    button.primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .flex { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: center; }
+  </style>
 </head>
 <body>
-    <div class="container">
-
-        <!-- الهيدر والقائمة -->
-        <header>
-            <div class="logo">
-                <h1>يوسف سقيل</h1>
-            </div>
-            <nav>
-                <a href="index.html">الرئيسية</a>
-                <a href="#about">من نحن</a>
-                <a href="#contact">اتصل بنا</a>
-                <a href="login.html">تسجيل الدخول</a>
-                <a href="register.html">إنشاء حساب</a>
-            </nav>
-        </header>
-
-        <!-- أزرار تغيير اللون -->
-        <div class="btn-group">
-            <button class="btn btn-dark" onclick="changeTheme('dark')">⚫ أسود</button>
-            <button class="btn btn-cyan" onclick="changeTheme('cyan')">سماوي</button>
-            <button class="btn btn-yellow" onclick="changeTheme('yellow')">أصفر</button>
-            <button class="btn btn-wave" onclick="changeTheme('wave')">🌊 متموج</button>
-            <button class="btn" onclick="changeTheme('default')">↩️ افتراضي</button>
-        </div>
-
-        <!-- المحتوى الرئيسي -->
-        <section class="hero">
-            <img src="https://via.placeholder.com/150/0077b6/ffffff?text=YS" alt="شعار يوسف سقيل">
-            <h2>مرحبًا بكم في موقع يوسف سقيل</h2>
-            <p>هذا هو الموقع الإلكتروني الرسمي ليوسف سقيل. يمكنك من خلاله التعرف على السيرة الذاتية، المشاريع، وآخر الأعمال.</p>
-        </section>
-
-        <section id="about" class="section">
-            <h3>👤 من نحن</h3>
-            <p>أنا يوسف سقيل، مهتم بتقنية المعلومات وتطوير المواقع. هذا الموقع هو منصة شخصية لعرض المشاريع والخبرات، ويهدف إلى تقديم محتوى مفيد في مجال البرمجة والتصميم.</p>
-            <p>تم بناء هذا الموقع باستخدام تقنيات <strong>HTML، CSS، وJavaScript</strong>، مع تصميم متجاوب يتناسب مع جميع الأجهزة.</p>
-        </section>
-
-        <section id="contact" class="section contact-form">
-            <h3>📞 اتصل بنا</h3>
-            <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك! شكراً للتواصل.');">
-                <input type="text" placeholder="الاسم الكامل" required>
-                <input type="email" placeholder="البريد الإلكتروني" required>
-                <textarea rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
-                <button type="submit">إرسال الرسالة</button>
-            </form>
-        </section>
-
-        <footer>
-            <p>© 2026 يوسف سقيل. جميع الحقوق محفوظة.</p>
-        </footer>
+  <!-- Fixed Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-logo">✦</span>
+        <span>يوسف سقيل</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="#about" data-i18n="nav_about">من أنا</a></li>
+          <li><a href="#projects" data-i18n="nav_projects">مشاريعي</a></li>
+          <li><a href="#consult" data-i18n="nav_consult">الاستشارات</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button id="langToggle" class="icon-btn" title="تغيير اللغة">🌐</button>
+        <button id="darkModeToggle" class="icon-btn" title="الوضع الليلي">🌙</button>
+      </div>
     </div>
+  </header>
 
-    <script>
-        // ===== وظيفة تغيير الثيم =====
-        function changeTheme(theme) {
-            // إزالة جميع الكلاسات السابقة
-            document.body.classList.remove('dark', 'cyan', 'yellow', 'wave');
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <img src="assets/profile-placeholder.jpg" alt="صورة يوسف سقيل" class="hero-img" id="heroImage">
+    <h1>يوسف سقيل</h1>
+    <p data-i18n="hero_sub">استشارات · مشاريع · تواصل</p>
+  </section>
 
-            if (theme === 'default') {
-                // لا نضيف أي كلاسة، نعيد الألوان الافتراضية
-                return;
-            }
+  <main>
+    <!-- نبذة عني -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title" data-i18n="about_title">نبذة عني</h2>
+        <div class="card">
+          <p data-i18n="about_text">أنا يوسف سقيل، متخصص في تقديم الاستشارات الإدارية والتقنية، أعمل على بناء مشاريع رقمية مبتكرة. أؤمن بأن التكنولوجيا يمكن أن تكون جسراً لتحقيق النجاح. هذا الموقع هو مساحتي الشخصية لمشاركة الأفكار والمشاريع والتواصل معكم.</p>
+        </div>
+        <div class="social-bar">
+          <!-- social links will be injected by JS from settings.js -->
+        </div>
+      </div>
+    </section>
 
-            if (theme === 'wave') {
-                // تأثير متموج: نطبق كلاسات مع تغيير الخلفية تدريجياً
-                document.body.style.background = 'linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1)';
-                document.body.style.backgroundSize = '400% 400%';
-                document.body.style.animation = 'waveBackground 8s ease infinite';
-                // نحتفظ بلون النص غامقاً للوضوح
-                document.body.style.color = '#222';
-                // نعيد تعيين خلفية الحاوية لتكون شفافة قليلاً
-                const container = document.querySelector('.container');
-                container.style.background = 'rgba(255,255,255,0.85)';
-                container.style.backdropFilter = 'blur(4px)';
-                return;
-            } else {
-                // إزالة تأثير الموجة إذا كان مطبقاً
-                document.body.style.background = '';
-                document.body.style.animation = '';
-                document.querySelector('.container').style.background = '';
-                document.querySelector('.container').style.backdropFilter = '';
-                // إضافة الكلاسة المطلوبة
-                document.body.classList.add(theme);
-            }
+    <!-- المشاريع -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title" data-i18n="projects_title">المشاريع</h2>
+        <div class="grid">
+          <div class="card"><i class="fas fa-code"></i><h3 data-i18n="project1_title">منصة تعليمية</h3><p data-i18n="project1_desc">نظام إدارة محتوى تفاعلي للدورات.</p></div>
+          <div class="card"><i class="fas fa-chart-line"></i><h3 data-i18n="project2_title">تحليل بيانات</h3><p data-i18n="project2_desc">لوحات تحكم ذكية لاتخاذ القرار.</p></div>
+          <div class="card"><i class="fas fa-mobile-alt"></i><h3 data-i18n="project3_title">تطبيق جوال</h3><p data-i18n="project3_desc">تطبيق لحجز الخدمات عبر الهاتف.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الاستشارات -->
+    <section id="consult">
+      <div class="container">
+        <h2 class="section-title" data-i18n="consult_title">الاستشارات</h2>
+        <div class="flex">
+          <div class="card" style="max-width:400px;"><i class="fas fa-briefcase"></i><h3 data-i18n="consult1">استشارات إدارية</h3><p data-i18n="consult1_desc">تطوير العمليات وبناء الفرق.</p></div>
+          <div class="card" style="max-width:400px;"><i class="fas fa-laptop-code"></i><h3 data-i18n="consult2">استشارات تقنية</h3><p data-i18n="consult2_desc">حلول رقمية وتحول تقني.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- شارك رأيك / أرسل اقتراح / الإبلاغ عن مشكلة / تواصل -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title" data-i18n="contact_title">تواصل معنا</h2>
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+          <div>
+            <h3><i class="fas fa-comment"></i> <span data-i18n="opinion_title">شارك رأيك</span></h3>
+            <form id="opinionForm"><input type="text" placeholder="رأيك..." data-i18n-ph="opinion_ph"><button class="primary" type="submit" data-i18n="send">إرسال</button></form>
+            <h3 style="margin-top:1.5rem;"><i class="fas fa-lightbulb"></i> <span data-i18n="suggest_title">أرسل اقتراح</span></h3>
+            <form id="suggestForm"><input type="text" placeholder="اقتراحك..." data-i18n-ph="suggest_ph"><button class="primary" type="submit" data-i18n="send">إرسال</button></form>
+            <h3 style="margin-top:1.5rem;"><i class="fas fa-exclamation-triangle"></i> <span data-i18n="report_title">الإبلاغ عن مشكلة</span></h3>
+            <form id="reportForm"><input type="text" placeholder="وصف المشكلة..." data-i18n-ph="report_ph"><button class="primary" type="submit" data-i18n="send">إرسال</button></form>
+          </div>
+          <div>
+            <h3><i class="fas fa-envelope"></i> <span data-i18n="contact_form_title">نموذج التواصل</span></h3>
+            <form id="mainContactForm">
+              <input type="text" placeholder="الاسم" data-i18n-ph="name_ph">
+              <input type="email" placeholder="البريد الإلكتروني" data-i18n-ph="email_ph">
+              <textarea rows="3" placeholder="رسالتك" data-i18n-ph="message_ph"></textarea>
+              <button class="primary" type="submit" data-i18n="send">إرسال</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 يوسف سقيل | جميع الحقوق محفوظة</p>
+    <p style="margin-top:0.5rem; font-size:0.9rem;">صُمم بواسطة يوسف سقيل</p>
+  </footer>
+
+  <!-- settings.js external (holds social links & config) -->
+  <script src="assets/settings.js"></script>
+  <script>
+    (function() {
+      // Dark mode toggle
+      const darkToggle = document.getElementById('darkModeToggle');
+      darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        darkToggle.innerHTML = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      });
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+        darkToggle.innerHTML = '☀️';
+      }
+
+      // Language toggle
+      const langToggle = document.getElementById('langToggle');
+      let currentLang = 'ar';
+      langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        applyLanguage(currentLang);
+      });
+
+      // Translations dictionary
+      const translations = {
+        ar: {
+          nav_home: 'الرئيسية', nav_about: 'من أنا', nav_projects: 'مشاريعي', nav_consult: 'الاستشارات', nav_contact: 'تواصل معنا',
+          hero_sub: 'استشارات · مشاريع · تواصل',
+          about_title: 'نبذة عني',
+          about_text: 'أنا يوسف سقيل، متخصص في تقديم الاستشارات الإدارية والتقنية، أعمل على بناء مشاريع رقمية مبتكرة.',
+          projects_title: 'المشاريع',
+          project1_title: 'منصة تعليمية', project1_desc: 'نظام إدارة محتوى تفاعلي للدورات.',
+          project2_title: 'تحليل بيانات', project2_desc: 'لوحات تحكم ذكية لاتخاذ القرار.',
+          project3_title: 'تطبيق جوال', project3_desc: 'تطبيق لحجز الخدمات عبر الهاتف.',
+          consult_title: 'الاستشارات',
+          consult1: 'استشارات إدارية', consult1_desc: 'تطوير العمليات وبناء الفرق.',
+          consult2: 'استشارات تقنية', consult2_desc: 'حلول رقمية وتحول تقني.',
+          opinion_title: 'شارك رأيك', suggest_title: 'أرسل اقتراح', report_title: 'الإبلاغ عن مشكلة',
+          contact_form_title: 'نموذج التواصل', send: 'إرسال',
+          opinion_ph: 'رأيك...', suggest_ph: 'اقتراحك...', report_ph: 'وصف المشكلة...',
+          name_ph: 'الاسم', email_ph: 'البريد الإلكتروني', message_ph: 'رسالتك',
+          contact_title: 'تواصل معنا'
+        },
+        en: {
+          nav_home: 'Home', nav_about: 'About', nav_projects: 'Projects', nav_consult: 'Consulting', nav_contact: 'Contact',
+          hero_sub: 'Consulting · Projects · Contact',
+          about_title: 'About Me',
+          about_text: 'I am Yusuf Saqil, specializing in management and technical consulting, building innovative digital projects.',
+          projects_title: 'Projects',
+          project1_title: 'E-Learning Platform', project1_desc: 'Interactive content management system for courses.',
+          project2_title: 'Data Analytics', project2_desc: 'Smart dashboards for decision making.',
+          project3_title: 'Mobile App', project3_desc: 'App for booking services via phone.',
+          consult_title: 'Consulting',
+          consult1: 'Management Consulting', consult1_desc: 'Process development and team building.',
+          consult2: 'Technical Consulting', consult2_desc: 'Digital solutions and transformation.',
+          opinion_title: 'Share Opinion', suggest_title: 'Send Suggestion', report_title: 'Report Problem',
+          contact_form_title: 'Contact Form', send: 'Send',
+          opinion_ph: 'Your opinion...', suggest_ph: 'Your suggestion...', report_ph: 'Describe problem...',
+          name_ph: 'Name', email_ph: 'Email', message_ph: 'Message',
+          contact_title: 'Contact Us'
         }
+      };
 
-        // ===== إضافة حركة الموجة باستخدام CSS Keyframes =====
-        const styleSheet = document.createElement("style");
-        styleSheet.textContent = `
-            @keyframes waveBackground {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-        `;
-        document.head.appendChild(styleSheet);
-    </script>
+      function applyLanguage(lang) {
+        document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+        // placeholders
+        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+          const phKey = el.getAttribute('data-i18n-ph');
+          if (translations[lang] && translations[lang][phKey]) {
+            el.setAttribute('placeholder', translations[lang][phKey]);
+          }
+        });
+        // update hero image text? optional
+        langToggle.innerHTML = lang === 'ar' ? '🌐' : '🌐';
+      }
+
+      // Social links injection from settings.js
+      function loadSocialLinks() {
+        const socialContainer = document.querySelector('.social-bar');
+        if (!socialContainer) return;
+        const settings = window.siteSettings || {};
+        const socials = settings.socialLinks || [];
+        socials.forEach(item => {
+          const a = document.createElement('a');
+          a.href = item.url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.innerHTML = `<i class="${item.icon}"></i>`;
+          socialContainer.appendChild(a);
+        });
+      }
+      loadSocialLinks();
+
+      // Simple form submission prevent default
+      document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('تم الإرسال (نموذج تجريبي)');
+        });
+      });
+
+      // initial language
+      applyLanguage('ar');
+    })();
+  </script>
+  <!-- Additional Meta for SEO / robots -->
+  <!-- robots.txt & sitemap.xml provided in repository -->
 </body>
 </html>
